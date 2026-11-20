@@ -1,0 +1,135 @@
+// Design tokens extracted from Figma "Gradski prevoz Stara Pazova"
+// (local paint styles + text styles). Names mirror the Figma style names.
+
+:root {
+  /* ---------- Colors ---------- */
+
+  // Neutrals / base
+  --color-white: #fbfbfb;
+  --color-light-cream: #eee8e1;
+  --color-cream: #ded7ce;
+
+  // Pink
+  --color-pink-8: #fcf3f3;
+  --color-pink-20: #f8e6e5;
+  --color-pink: #da807f;
+
+  // Yellow
+  --color-yellow-20: #d8ccb7;
+  --color-yellow-50: #ffe1ac;
+  --color-yellow: #ffc259;
+  --color-dark-yellow: #f2b855;
+
+  // Grey
+  --color-grey-4: #f8f8f9;
+  --color-grey-8: #f1f2f2;
+  --color-grey-10: #eeeeef;
+  --color-grey-20: #dbdcde;
+  --color-grey-50: #a6a9ae;
+  --color-grey-70: #82878d;
+  --color-grey: #4c535c;
+
+  // Dark blue
+  --color-dark-blue-4: #f6f7f9;
+  --color-dark-blue-8: #edeff3;
+  --color-dark-blue-20: #d1d7e0;
+  --color-dark-blue-50: #697990;
+  --color-dark-blue-70: #5e7494;
+  --color-dark-blue: #183866;
+
+  /* ---------- Shadows ---------- */
+  --color-shadow: rgba(24, 56, 102, 0.1); // Dark blue (#183866) at 10%
+  --shadow: 0 0.0625rem 0.25rem 0 var(--color-shadow);
+
+  /* ---------- Font families ---------- */
+  --font-open-sans: 'Open Sans', system-ui, sans-serif;
+  --font-lato: 'Lato', system-ui, sans-serif;
+
+  /* ---------- Font weights ---------- */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ---------- Text styles ----------
+     Figma line-height is "Auto" for all styles → normal.
+     Figma letter-spacing % → em (e.g. -1.5% = -0.015em). */
+
+  // H1 — Open Sans Light 98
+  --text-h1-family: var(--font-open-sans);
+  --text-h1-weight: var(--font-weight-light);
+  --text-h1-size: 6.125rem;
+  --text-h1-tracking: -0.015em;
+
+  // H2 — Open Sans Light 61
+  --text-h2-family: var(--font-open-sans);
+  --text-h2-weight: var(--font-weight-light);
+  --text-h2-size: 3.8125rem;
+  --text-h2-tracking: -0.005em;
+
+  // H3 — Open Sans Regular 49
+  --text-h3-family: var(--font-open-sans);
+  --text-h3-weight: var(--font-weight-regular);
+  --text-h3-size: 3.0625rem;
+  --text-h3-tracking: 0;
+
+  // H4 — Open Sans Regular 35
+  --text-h4-family: var(--font-open-sans);
+  --text-h4-weight: var(--font-weight-regular);
+  --text-h4-size: 2.1875rem;
+  --text-h4-tracking: 0.0025em;
+
+  // H5 — Lato Regular 24 (Lato Bold 24 is also used, for line numbers)
+  --text-h5-family: var(--font-lato);
+  --text-h5-weight: var(--font-weight-regular);
+  --text-h5-size: 1.5rem;
+  --text-h5-tracking: 0;
+
+  // H6 — Open Sans Regular 20
+  --text-h6-family: var(--font-open-sans);
+  --text-h6-weight: var(--font-weight-regular);
+  --text-h6-size: 1.25rem;
+  --text-h6-tracking: 0.0015em;
+
+  // Subtitle 1 — Open Sans Regular 16
+  --text-subtitle-1-family: var(--font-open-sans);
+  --text-subtitle-1-weight: var(--font-weight-regular);
+  --text-subtitle-1-size: 1rem;
+  --text-subtitle-1-tracking: 0.0015em;
+
+  // Subtitle 2 — Open Sans SemiBold 14
+  --text-subtitle-2-family: var(--font-open-sans);
+  --text-subtitle-2-weight: var(--font-weight-semibold);
+  --text-subtitle-2-size: 0.875rem;
+  --text-subtitle-2-tracking: 0.001em;
+
+  // Body 1 — Open Sans Regular 16
+  --text-body-1-family: var(--font-open-sans);
+  --text-body-1-weight: var(--font-weight-regular);
+  --text-body-1-size: 1rem;
+  --text-body-1-tracking: 0.005em;
+
+  // Body 2 — Open Sans Regular 14
+  --text-body-2-family: var(--font-open-sans);
+  --text-body-2-weight: var(--font-weight-regular);
+  --text-body-2-size: 0.875rem;
+  --text-body-2-tracking: 0.0025em;
+
+  // Button — Open Sans SemiBold 14
+  --text-button-family: var(--font-open-sans);
+  --text-button-weight: var(--font-weight-semibold);
+  --text-button-size: 0.875rem;
+  --text-button-tracking: 0.0125em;
+
+  // Caption — Open Sans Regular 12
+  --text-caption-family: var(--font-open-sans);
+  --text-caption-weight: var(--font-weight-regular);
+  --text-caption-size: 0.75rem;
+  --text-caption-tracking: 0.004em;
+
+  // Overline — Open Sans Regular 10
+  --text-overline-family: var(--font-open-sans);
+  --text-overline-weight: var(--font-weight-regular);
+  --text-overline-size: 0.625rem;
+  --text-overline-tracking: 0.015em;
+}

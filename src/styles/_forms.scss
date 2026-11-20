@@ -1,0 +1,131 @@
+// Forms
+//
+// Search field — from Figma Components page: "Search " (269:22224)
+// with the field states from the "Field" component (793:5996):
+//   Placeholder, Placeholder hover, Populated, Populated hover, Focus, Disabled.
+// States are driven by the browser (:hover, :focus-within, :disabled) —
+// no extra classes needed, except .search__bar--disabled if you can't use
+// the input's `disabled` attribute.
+//
+// Usage:
+//   <div class="search">
+//     <label class="search__label" for="stop-search">Gde čekaš autobus?</label>
+//     <div class="search__bar">
+//       <input class="search__input" id="stop-search" type="search"
+//              placeholder="Unesi naziv stajališta">
+//       <button class="search__clear" type="button" aria-label="Obriši">…icon…</button>
+//     </div>
+//   </div>
+
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  width: 100%;
+}
+
+// "Gde čekaš autobus?" — Subtitle 2, Grey
+.search__label {
+  font-family: var(--text-subtitle-2-family);
+  font-weight: var(--text-subtitle-2-weight);
+  font-size: var(--text-subtitle-2-size);
+  letter-spacing: var(--text-subtitle-2-tracking);
+  line-height: normal;
+  color: var(--color-grey);
+}
+
+// Status=Placeholder / Populated
+.search__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  height: 3.5rem;
+  padding: 0.25rem;
+  border: 0.0625rem solid var(--color-grey-20);
+  border-radius: 0.25rem;
+  background-color: var(--color-white);
+
+  // Status=Placeholder hover / Populated hover
+  &:hover {
+    background-color: var(--color-grey-8);
+  }
+
+  // Status=Focus — Grey 8 field with a 1px Dark blue ring 4px outside it
+  &:focus-within {
+    border-color: var(--color-grey-8);
+    background-color: var(--color-grey-8);
+    outline: 0.0625rem solid var(--color-dark-blue);
+    outline-offset: 0.1875rem;
+  }
+
+  // Status=Disabled
+  &:has(.search__input:disabled),
+  &.search__bar--disabled {
+    border-color: var(--color-grey-20);
+    background-color: var(--color-grey-20);
+    cursor: default;
+  }
+}
+
+// Typed text — Body 1, Dark blue
+.search__input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0 1.25rem;
+  border: 0;
+  outline: none; // focus is shown on .search__bar instead
+  background: transparent;
+  font-family: var(--text-body-1-family);
+  font-weight: var(--text-body-1-weight);
+  font-size: var(--text-body-1-size);
+  letter-spacing: var(--text-body-1-tracking);
+  line-height: normal;
+  color: var(--color-dark-blue);
+
+  // Placeholder — Body 1, Grey 70
+  &::placeholder {
+    color: var(--color-grey-70);
+    opacity: 1; // Firefox lowers placeholder opacity by default
+  }
+
+  // When the clear button is shown, it takes the right side (no right padding)
+  &:not(:last-child) {
+    padding-right: 0;
+  }
+
+  &:disabled {
+    color: var(--color-grey-70);
+    cursor: default;
+  }
+
+  // Remove the browser's built-in clear "x" (we use .search__clear)
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+}
+
+// Clear button — 48px round icon button with a 24px Grey "close" icon
+.search__clear {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-grey);
+  cursor: pointer;
+
+  > svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: currentColor;
+  }
+}

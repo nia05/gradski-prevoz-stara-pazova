@@ -1,0 +1,93 @@
+// Buttons — from Figma Components page:
+//   "Primary button"  (660:9849) → .btn.btn--primary
+//   "Seconday button" (660:9864) → .btn.btn--secondary
+//
+// Usage:
+//   <button class="btn btn--primary">Pogledaj red vožnje</button>
+//   <a class="btn btn--secondary" href="/vesti">Pogledaj sve vesti</a>
+//   Optional icon: <span class="btn__icon">…svg…</span> before the label.
+
+// Shared base
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  // Figma text style "Button"
+  font-family: var(--text-button-family);
+  font-weight: var(--text-button-weight);
+  font-size: var(--text-button-size);
+  letter-spacing: var(--text-button-tracking);
+  line-height: normal;
+}
+
+// 20px icon slot (hidden in all current designs, but part of the component)
+.btn__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+
+  > svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+}
+
+// Primary — yellow filled
+.btn--primary {
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-yellow);
+  color: var(--color-dark-blue);
+
+  &:hover {
+    background-color: var(--color-dark-yellow);
+  }
+
+  &:disabled,
+  &.btn--disabled {
+    background-color: var(--color-grey-20);
+    color: var(--color-grey);
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+// Secondary — outlined, 32px visible height inside a 48px tap area
+.btn--secondary {
+  position: relative;
+  height: 2rem;
+  padding: 0.1875rem 0.75rem;
+  border: 0.0625rem solid var(--color-grey-50);
+  border-radius: 0.75rem;
+  background-color: transparent;
+  color: var(--color-grey);
+
+  // Extends the clickable area to 48px tall without changing the visual size
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -0.5rem 0;
+  }
+
+  &:hover {
+    border-color: var(--color-grey);
+  }
+}
+
+// Stretch to the container width (e.g. 380px full-width primary on mobile)
+.btn--block {
+  display: flex;
+  width: 100%;
+}

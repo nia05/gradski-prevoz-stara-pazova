@@ -1,0 +1,32 @@
+// Base reset for html and body.
+
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%; // stop mobile browsers from auto-enlarging text
+  text-size-adjust: 100%;
+}
+
+// Every element sizes with border-box (padding and border included in width/height)
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  // Default text = Figma "Body 1", so any text without its own style matches the design
+  font-family: var(--text-body-1-family);
+  font-weight: var(--text-body-1-weight);
+  font-size: var(--text-body-1-size);
+  letter-spacing: var(--text-body-1-tracking);
+  line-height: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
