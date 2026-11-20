@@ -1,0 +1,24 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { LineComponent } from './line.component';
+
+describe('LineComponent', () => {
+  let component: LineComponent;
+  let fixture: ComponentFixture<LineComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [LineComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(LineComponent);
+    component = fixture.componentInstance;
+    fixture.componentRef.setInput('broj', '1');
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
