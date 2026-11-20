@@ -1,0 +1,6 @@
+@use '../../../styles/tokens';
+
+.toolbar {
+    padding: 0.75rem 1rem;
+    box-shadow: var(--shadow);
+}
