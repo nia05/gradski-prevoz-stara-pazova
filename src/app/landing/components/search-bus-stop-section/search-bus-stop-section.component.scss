@@ -1,0 +1,7 @@
+@use '../../../../styles/tokens';
+@use '../../../../styles/forms';
+
+.search-bus-stop {
+    padding: 3rem 1rem;
+    background-color: var(--color-dark-blue-4);
+}
