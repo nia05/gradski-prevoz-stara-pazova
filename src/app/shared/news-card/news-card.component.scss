@@ -17,17 +17,19 @@
     }
 
     &__title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
         color: var(--color-dark-blue);
     }
 
-    &__details {
+    &__date {
         display: flex;
-        justify-content: space-between;
-    }
-
-    &__detail {
-        display: flex;
+        justify-content: flex-start;
         align-items: center;
         gap: 0.25rem;
+        margin-bottom: 0.25rem;
     }
 }

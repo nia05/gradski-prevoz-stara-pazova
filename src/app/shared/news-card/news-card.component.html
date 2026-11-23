@@ -1,16 +1,10 @@
 <article class="news-card">
     <img class="news-card__image" [src]="newsImage()" [alt]="newsTitle()">
     <div class="news-card__content">
+        <span class="news-card__date text-body-2">
+            <img src="icons/calendar.svg" alt="">
+            {{ newsDate() | date: newsDateFormat }}
+        </span>
         <p class="news-card__title subtitle-1">{{ newsTitle() }}</p>
-        <div class="news-card__details text-body-2">
-            <span class="news-card__detail">
-                <img src="icons/calendar.svg" alt="">
-                {{ newsDate() }}
-            </span>
-            <span class="news-card__detail">
-                <img src="icons/clock.svg" alt="">
-                {{ newsTime() }}
-            </span>
-        </div>
     </div>
 </article>
