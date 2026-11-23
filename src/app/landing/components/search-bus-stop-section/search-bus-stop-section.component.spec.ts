@@ -3,37 +3,14 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { SearchBusStopSectionComponent } from './search-bus-stop-section.component';
-import { BusLinesResponse, BusLineType, DirectionCode } from '../../../shared/bus-lines/bus-lines.model';
+import { createBusLinesResponse, createSuburbanBusLine } from '../../../shared/bus-lines/bus-lines.generator';
 import { BUS_LINES_URL } from '../../../shared/bus-lines/bus-lines.constants';
 
 describe('SearchBusStopSectionComponent', () => {
   let component: SearchBusStopSectionComponent;
   let fixture: ComponentFixture<SearchBusStopSectionComponent>;
 
-  const timetable = { weekday: [], saturday: [], sunday: [] };
-  const mockData = {
-    lines: [
-      {
-        number: 1, name: 'Linija 1', type: BusLineType.Suburban, validFrom: '', registerNumber: 1,
-        directions: [
-          {
-            code: DirectionCode.A, from: '', to: '', timetable,
-            busStops: [
-              { id: 'stara-pazova-stara-pazova-as', town: 'Stara Pazova', name: 'Stara Pazova AS', km: 0 },
-              { id: 'nova-pazova-centar', town: 'Nova Pazova', name: 'Centar', km: 7 },
-            ],
-          },
-          {
-            code: DirectionCode.B, from: '', to: '', timetable,
-            busStops: [
-              { id: 'nova-pazova-centar', town: 'Nova Pazova', name: 'Centar', km: 0 },
-              { id: 'stara-pazova-cirila-i-metodija-1-d', town: 'Stara Pazova', name: 'Ćirila i Metodija 1 - d', km: 9 },
-            ],
-          },
-        ],
-      },
-    ],
-  } as BusLinesResponse;
+  const mockData = createBusLinesResponse({ lines: [createSuburbanBusLine()] });
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
