@@ -1,0 +1,174 @@
+{
+  "news": [
+    {
+      "id": 2,
+      "title": "Linija 6 ne može do Železničke stanice zbog nepropisno parkiranih vozila",
+      "date": "2026-10-06",
+      "image": "images/news/novi-autobusi.jpg",
+      "imageAlt": "Novi plavi autobusi parkirani na parkingu",
+      "source": {
+        "name": "RTV Stara Pazova",
+        "url": "https://www.rtvstarapazova.rs/sr/vest.php?id=22848"
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Obaveštavaju se putnici Linije broj 6 – Gradska linija Stara Pazova da trasa linije nije promenjena i da je stajalište Železnička stanica Stara Pazova i dalje deo odobrenog reda vožnje."
+        },
+        {
+          "type": "paragraph",
+          "text": "Od juče, 05. oktobra, na pojedinim poslepodnevnim polascima došlo je do nesaobraćanja autobusa do stajališta Železnička stanica, jer autobus nije mogao da se okrene u Železničkoj ulici zbog velikog broja nepropisno parkiranih automobila."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ovim putem apeluje se na sve vozače da ne parkiraju svoja vozila na obeleženim autobuskim stajalištima i na javnom putu u Železničkoj ulici. Nadležne službe su preduzele mere."
+        },
+        {
+          "type": "paragraph",
+          "text": "Putnici umesto stajališta na Železničkoj stanici Stara Pazova na pojedinim polascima tokom dana mogu da koriste stajalište u Njegoševoj ulici."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Izmena stajališta na prigradskoj liniji 2 zbog radova na nadvožnjaku",
+      "date": "2026-08-22",
+      "image": "images/news/novi-autobusi.jpg",
+      "imageAlt": "Novi plavi autobusi parkirani na parkingu",
+      "source": {
+        "name": "RTV Stara Pazova",
+        "url": "https://www.rtvstarapazova.rs/sr/vest.php?id=22591"
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Zbog popravke nadvožnjaka na putu Stara Pazova – Vojka i preusmeravanja prigradske linije broj 2 (Stara Pazova – Vojka – Krnješevci) preko Nove Pazove, privremeno stajalište „Centar Vojka“ biće na parkingu ispred Osnovne škole, u smeru ka Novoj Pazovi."
+        },
+        {
+          "type": "paragraph",
+          "text": "Za vreme popravke nadvožnjaka neće raditi stajališta kod Putnika ka Vojki. Umesto njih koriste se stajališta „Izlaz ka Novoj Pazovi – Dunav“ u oba smera, u pravcu Nove Pazove."
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Javni prevoz u opštini Stara Pazova: Pogledajte koje su linije i gde naći red vožnje",
+      "date": "2026-08-02",
+      "image": "images/news/novi-autobusi.jpg",
+      "imageAlt": "Novi plavi autobusi parkirani na parkingu",
+      "source": {
+        "name": "RTV Stara Pazova",
+        "url": "https://www.rtvstarapazova.rs/sr/vest.php?id=22342"
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Od ponedeljka, 6. jula 2026. godine, na teritoriji opštine Stara Pazova počeo je sa radom novi sistem gradskog i prigradskog javnog prevoza putnika."
+        },
+        {
+          "type": "paragraph",
+          "text": "Prevoz će, na osnovu ugovora o poveravanju obavljanja delatnosti kroz javno-privatno partnerstvo sa elementima koncesije, obavljati Autosaobraćajno preduzeće „Strela“ iz Obrenovca."
+        },
+        {
+          "type": "paragraph",
+          "text": "Nakon više decenija rešava se problem javnog prevoza u opštini Stara Pazova i od ponedeljka putnike će po uređenom redu vožnje prevoziti novi autobusi i to potpuno besplatno."
+        },
+        {
+          "type": "paragraph",
+          "text": "Građanima će na raspolaganju biti ukupno osam autobuskih linija koje će povezivati sva naseljena mesta, železničke stanice i industrijske zone u opštini. Linija 1 koja se ukršta sa drugih 7 linija će imati poslednju stanicu kod Aerodroma Batajnica odakle se putnici preko autobusa 706e mogu priključiti sistemu GSP Beograd."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ovo je spisak svih 8 linija. Klikom na svaku od njih možete videti stajališta i red vožnje:"
+        },
+        {
+          "type": "links",
+          "links": [
+            {
+              "text": "Linija br. 1 – Stara Pazova – Nova Pazova (aerodrom)",
+              "url": "https://starapazova.rs/images/stories/PDF/saobracaj/Red%20voznje%20-%20Linija%20br.%201%20-%20St.Pazova%20-%20N.Pazova%20(aerodrom).pdf"
+            },
+            {
+              "text": "Linija br. 2 – Stara Pazova – Vojka – Krnješevci",
+              "url": "https://starapazova.rs/images/stories/PDF/saobracaj/Red%20voznje%20-%20Linija%20br.%202%20-%20St.Pazova%20-%20Vojka%20-%20Krnjesevci.pdf"
+            },
+            {
+              "text": "Linija br. 3 – Stara Pazova – Golubinci",
+              "url": "https://starapazova.rs/images/stories/PDF/saobracaj/Red%20voznje%20-%20Linija%20br.%203%20-%20St.Pazova%20-%20Golubinci.pdf"
+            },
+            {
+              "text": "Linija br. 4 – Stara Pazova – Stari Banovci – Belegiš – Surduk",
+              "url": "https://starapazova.rs/images/stories/PDF/saobracaj/Red%20voznje%20-%20Linija%20br.%204%20-%20St.Pazova%20-%20St.%20Banovci%20-%20Belegis%20-%20Surduk.pdf"
+            },
+            {
+              "text": "Linija br. 5 – Stara Pazova – Nova Pazova – Stari Banovci – Novi Banovci",
+              "url": "https://starapazova.rs/images/stories/PDF/saobracaj/Red%20voznje%20-%20Linija%20br.%205%20-%20St.Pazova%20-%20N.Pazova%20-%20St.Banovci%20-%20N.Banovci.pdf"
+            },
+            {
+              "text": "Linija br. 6 – Gradska linija Stara Pazova",
+              "url": "https://starapazova.rs/images/stories/PDF/saobracaj/Red%20voznje%20-%20Linija%20br.%206%20-%20Gradska%20linija%20Stara%20Pazova.pdf"
+            },
+            {
+              "text": "Linija br. 7 – Gradska linija Nova Pazova",
+              "url": "https://starapazova.rs/images/stories/PDF/saobracaj/Red%20voznje%20-%20Linija%20br.%207%20-%20Gradska%20linija%20Nova%20Pazova.pdf"
+            },
+            {
+              "text": "Linija br. 8 – Surduk – Belegiš – Stari Banovci – Novi Banovci",
+              "url": "https://starapazova.rs/images/stories/PDF/saobracaj/Red%20voznje%20-%20Linija%20br.%208%20-%20Surduk%20-%20Belegis%20-%20St.Banovci%20-%20N.Banovci.pdf"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nadležni pozivaju građane da se na vreme informišu o terminima polazaka, a kompletan red vožnje za sve linije dostupan je na zvaničnom sajtu Opštine Stara Pazova, na sledećem linku:"
+        },
+        {
+          "type": "links",
+          "links": [
+            {
+              "text": "https://starapazova.rs/rs/privreda/saobracaj-2.html",
+              "url": "https://starapazova.rs/rs/privreda/saobracaj-2.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Novi sistem javnog prevoza ima za cilj bolju povezanost svih naselja i kvalitetniju uslugu za putnike na teritoriji opštine Stara Pazova."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Počelo obeležavanje autobuskih stajališta za budući javni prevoz",
+      "date": "2026-06-07",
+      "image": "images/news/autobusko-stajaliste.jpg",
+      "imageAlt": "Saobraćajni znak za autobusko stajalište i žuta oznaka BUS na putu",
+      "source": {
+        "name": "RTV Stara Pazova",
+        "url": "https://www.rtvstarapazova.rs/sr/vest.php?id=22165"
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Nadležne službe počele su sa obeležavanjem autobuskih stajališta na trasama budućeg javnog prevoza u opštini Stara Pazova."
+        },
+        {
+          "type": "paragraph",
+          "text": "Putari na asfaltu žutom bojom ispisuju cik-cak linije sa natpisom BUS, a pored puta postavljaju saobraćajni znak za autobusko stajalište."
+        },
+        {
+          "type": "paragraph",
+          "text": "Stajališta se za sada obeležavaju na mestima na kojima će sigurno biti. Po završetku javne rasprave o Odluci o autobuskim stajalištima za gradski i prigradski prevoz, biće obeležena i ostala stajališta ukoliko proisteknu iz te odluke."
+        },
+        {
+          "type": "paragraph",
+          "text": "U naredna dva meseca, po okončanju svih procedura, u opštini bi trebalo da počne javni prevoz sa ukupno 8 linija, od kojih će 6 biti međumesne, a 2 isključivo gradske, u Staroj Pazovi i Novoj Pazovi."
+        },
+        {
+          "type": "paragraph",
+          "text": "Mreža linija bi obezbeđivala povezivanje svih naselja sa centralnim delovima, školama, industrijskim zonama, železničkim stanicama i ključnim saobraćajnim čvorištima. Planirano je da putnike prevozi najmanje 11 autobusa i 2 minibusa."
+        }
+      ]
+    }
+  ]
+}
