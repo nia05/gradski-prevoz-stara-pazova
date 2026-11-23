@@ -1,21 +1,27 @@
 <section class="bus-lines-section container">
     <h5>Autobuske linije</h5>
 
-    <p class="subtitle-2">Gradske linije</p>
-    <ul class="bus-lines">
-        @for (busLine of urbanBusLines(); track busLine.number) {
-            <li>
-                <app-bus-line-item [busLineNumber]="busLine.number" [busLineName]="busLine.name" />
-            </li>
-        }
-    </ul>
+    <div class="bus-lines-section__groups">
+        <div class="bus-lines-section__group">
+            <p class="bus-lines-section__group-title subtitle-2">Gradske linije</p>
+            <ul class="bus-lines">
+                @for (busLine of urbanBusLines(); track busLine.number) {
+                    <li>
+                        <app-bus-line-item [busLineNumber]="busLine.number" [busLineName]="busLine.name" />
+                    </li>
+                }
+            </ul>
+        </div>
 
-    <p class="subtitle-2">Prigradske linije</p>
-    <ul class="bus-lines">
-        @for (busLine of suburbanBusLines(); track busLine.number) {
-            <li>
-                <app-bus-line-item [busLineNumber]="busLine.number" [busLineName]="busLine.name" />
-            </li>
-        }
-    </ul>
+        <div class="bus-lines-section__group">
+            <p class="bus-lines-section__group-title subtitle-2">Prigradske linije</p>
+            <ul class="bus-lines">
+                @for (busLine of suburbanBusLines(); track busLine.number) {
+                    <li>
+                        <app-bus-line-item [busLineNumber]="busLine.number" [busLineName]="busLine.name" />
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
 </section>

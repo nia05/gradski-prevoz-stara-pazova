@@ -1,9 +1,31 @@
+@use '../../../../styles/breakpoints';
+
 .bus-lines-section {
     h5 {
         margin-bottom: 1.5rem;
-    } 
-    .subtitle-2 {
-        margin-bottom: 0.5rem;
+    }
+
+    &__groups {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        @media (min-width: breakpoints.$tablet) {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+    }
+
+    &__group {
+        flex: 1;
+
+        &-title {
+            margin-bottom: 0.5rem;
+            @media (min-width: breakpoints.$tablet) {
+                font-weight: var(--text-subtitle-1-weight);
+                font-size: var(--text-subtitle-1-size);
+                letter-spacing: var(--text-subtitle-1-tracking);
+            }
+        }
     }
 }
 
@@ -11,7 +33,4 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    &:first-of-type {
-        margin: 0 0 1.5rem;
-    }
 }
