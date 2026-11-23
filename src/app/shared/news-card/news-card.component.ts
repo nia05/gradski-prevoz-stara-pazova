@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
-import { NEWS_DATE_FORMAT } from '../news/news.constants';
+import { NEWS_DATE_FORMAT } from '../../core/news/news.constants';
 
 @Component({
   selector: 'app-news-card',

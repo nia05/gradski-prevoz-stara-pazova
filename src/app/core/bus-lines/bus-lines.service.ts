@@ -4,7 +4,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 
 import { BusLinesResponse, BusStop } from './bus-lines.model';
 import { BUS_LINES_URL, EMPTY_BUS_LINES_RESPONSE } from './bus-lines.constants';
-import { toLowercaseWithoutDiacritics } from '../utils';
+import { toLowercaseWithoutDiacritics } from '../../shared/utils';
 
 @Injectable({ providedIn: 'root' })
 export class BusLinesService {
