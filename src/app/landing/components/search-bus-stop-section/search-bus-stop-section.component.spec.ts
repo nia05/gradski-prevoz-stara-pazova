@@ -1,19 +1,49 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { SearchBusStopSectionComponent } from './search-bus-stop-section.component';
+import { BusLinesResponse, BusLineType, DirectionCode } from '../../../shared/bus-lines/bus-lines.model';
 
 describe('SearchBusStopSectionComponent', () => {
   let component: SearchBusStopSectionComponent;
   let fixture: ComponentFixture<SearchBusStopSectionComponent>;
 
+  const timetable = { weekday: [], saturday: [], sunday: [] };
+  const mockData = {
+    lines: [
+      {
+        number: 1, name: 'Linija 1', type: BusLineType.Suburban, validFrom: '', registerNumber: 1,
+        directions: [
+          {
+            code: DirectionCode.A, from: '', to: '', timetable,
+            busStops: [
+              { id: 'stara-pazova-stara-pazova-as', town: 'Stara Pazova', name: 'Stara Pazova AS', km: 0 },
+              { id: 'nova-pazova-centar', town: 'Nova Pazova', name: 'Centar', km: 7 },
+            ],
+          },
+          {
+            code: DirectionCode.B, from: '', to: '', timetable,
+            busStops: [
+              { id: 'nova-pazova-centar', town: 'Nova Pazova', name: 'Centar', km: 0 },
+              { id: 'stara-pazova-cirila-i-metodija-1-d', town: 'Stara Pazova', name: 'Ćirila i Metodija 1 - d', km: 9 },
+            ],
+          },
+        ],
+      },
+    ],
+  } as BusLinesResponse;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SearchBusStopSectionComponent]
+      imports: [SearchBusStopSectionComponent],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
     })
     .compileComponents();
 
     fixture = TestBed.createComponent(SearchBusStopSectionComponent);
     component = fixture.componentInstance;
+    TestBed.inject(HttpTestingController).expectOne('data/lines.json').flush(mockData);
     fixture.detectChanges();
   });
 
@@ -27,6 +57,14 @@ describe('SearchBusStopSectionComponent', () => {
 
   function getClearButton(): HTMLButtonElement | null {
     return fixture.nativeElement.querySelector('.search__clear');
+  }
+
+  function getResults(): string[] {
+    return [...fixture.nativeElement.querySelectorAll('.search__dropdown li')].map((li: HTMLElement) => {
+      const name = li.querySelector('.search__option-name');
+      const town = li.querySelector('.search__option-town');
+      return name && town ? `${name.textContent!.trim()} | ${town.textContent!.trim()}` : li.textContent!.trim();
+    });
   }
 
   function type(value: string): void {
@@ -52,5 +90,70 @@ describe('SearchBusStopSectionComponent', () => {
     expect(getInput().value).toBe('');
     expect(getClearButton()).toBeNull();
     expect(document.activeElement).toBe(getInput());
+  });
+
+  it('shows no results list while nothing is typed', () => {
+    expect(fixture.nativeElement.querySelector('.search__dropdown')).toBeNull();
+  });
+
+  it('lists matching bus stops once, even if they appear on several directions', () => {
+    type('centar');
+    expect(getResults()).toEqual(['Centar | Nova Pazova']);
+  });
+
+  it('matches town and bus stop name together', () => {
+    type('nova pazova centar');
+    expect(getResults()).toEqual(['Centar | Nova Pazova']);
+  });
+
+  it('matches without diacritics', () => {
+    type('cirila');
+    expect(getResults()).toEqual(['Ćirila i Metodija 1 - d | Stara Pazova']);
+  });
+
+  it('finds a bus stop typed with Serbian letters', () => {
+    type('Ćirila');
+    expect(getResults()).toEqual(['Ćirila i Metodija 1 - d | Stara Pazova']);
+  });
+
+  it('says so when nothing matches', () => {
+    type('Beograd');
+    expect(getResults()).toEqual(['Nema stajališta za „Beograd“']);
+  });
+
+  it('puts the chosen bus stop in the field and closes the dropdown', () => {
+    type('stara');
+    fixture.nativeElement.querySelector('.search__option').click();
+    fixture.detectChanges();
+
+    expect(getInput().value).toBe('Stara Pazova AS');
+    expect(fixture.nativeElement.querySelector('.search__dropdown')).toBeNull();
+  });
+
+  it('enables the timetable button only after a bus stop is chosen', () => {
+    const button: HTMLButtonElement = fixture.nativeElement.querySelector('.btn--primary');
+    expect(button.disabled).toBeTrue();
+
+    type('stara');
+    expect(button.disabled).toBeTrue();
+
+    fixture.nativeElement.querySelector('.search__option').click();
+    fixture.detectChanges();
+    expect(button.disabled).toBeFalse();
+  });
+
+  it('opens the dropdown again when the text is changed after choosing', () => {
+    type('stara');
+    fixture.nativeElement.querySelector('.search__option').click();
+    fixture.detectChanges();
+
+    type('Stara Pazova');
+    expect(fixture.nativeElement.querySelector('.search__dropdown')).not.toBeNull();
+  });
+
+  it('bolds the part of the bus stop name that matches the typed text', () => {
+    type('cirila');
+    const bold = fixture.nativeElement.querySelector('.search__option strong');
+    expect(bold.textContent).toBe('Ćirila');
   });
 });

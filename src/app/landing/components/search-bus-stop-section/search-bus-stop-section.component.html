@@ -1,16 +1,35 @@
 <section class="search-bus-stop">
-<div class="search">
-    <label class="search__label" for="stop-search">Gde čekaš autobus?</label>
-    <div class="search__bar">
-        <input #searchInput class="search__input" id="stop-search" type="search"
-            placeholder="Unesi naziv stajališta"
-            [value]="searchTerm()"
-            (input)="updateSearchTerm(searchInput.value)">
-        @if (searchTerm()) {
-            <button class="search__clear" type="button" aria-label="Obriši unos" (click)="clearSearch()">
-                <img src="icons/delete.svg" alt="">
-            </button>
+    <div class="search">
+        <label class="search__label" for="stop-search">Gde čekaš autobus?</label>
+        <div class="search__bar">
+            <input #searchInput class="search__input" id="stop-search" type="search"
+                placeholder="Unesi naziv stajališta"
+                [value]="searchTerm()"
+                (input)="updateSearchTerm(searchInput.value)">
+            @if (searchTerm()) {
+                <button class="search__clear" type="button" aria-label="Obriši unos" (click)="clearSearch()">
+                    <img src="icons/delete.svg" alt="">
+                </button>
+            }
+        </div>
+
+        @if (isDropdownOpen()) {
+            <ul class="search__dropdown">
+                @for (busStop of matchingBusStops(); track busStop.id) {
+                    <li>
+                        @let name = highlightSearchTerm(busStop.name);
+                        <button class="search__option" type="button" (click)="selectBusStop(busStop)">
+                            <span class="search__option-name">{{ name.before }}<strong>{{ name.match }}</strong>{{ name.after }}</span>
+                            <span class="search__option-town">{{ busStop.town }}</span>
+                        </button>
+                    </li>
+                } @empty {
+                    <li class="search__option">Nema stajališta za „{{ searchTerm() }}“</li>
+                }
+            </ul>
         }
     </div>
-</div>
+    <button class="btn btn--primary btn--block" type="button" [disabled]="!selectedBusStop()">
+        Pogledaj red vožnje
+    </button>
 </section>
