@@ -1,2 +1,22 @@
 <app-search-bus-stop-section></app-search-bus-stop-section>
-<p>landing works!</p>
+<section class="container">
+    <h5>Autobuske linije</h5>
+
+    <p class="subtitle-2">Gradske linije</p>
+    <ul class="bus-lines">
+        @for (busLine of urbanBusLines(); track busLine.number) {
+            <li>
+                <app-bus-line-item [busLineNumber]="busLine.number" />
+            </li>
+        }
+    </ul>
+
+    <p class="subtitle-2">Prigradske linije</p>
+    <ul class="bus-lines">
+        @for (busLine of suburbanBusLines(); track busLine.number) {
+            <li>
+                <app-bus-line-item [busLineNumber]="busLine.number" />
+            </li>
+        }
+    </ul>
+</section>
