@@ -1,0 +1,41 @@
+@let busStops = firstDirectionBusStops();
+
+<section class="line-header">
+    <nav aria-label="Putanja">
+        <ol class="breadcrumb">
+            <li><a class="breadcrumb__link" [routerLink]="['/', homePath]">Početna</a></li>
+            <li class="breadcrumb__current" aria-current="page">Linija {{ busLine().number }}</li>
+        </ol>
+    </nav>
+
+    <div class="line-header__info">
+        <div class="line-header__title">
+            <h5>Linija {{ busLine().number }}</h5>
+            @if (busLine().directions.length > 1) {
+                <button class="icon-button" type="button" aria-label="Promeni smer" (click)="directionChange.emit()">
+                    <img src="icons/direction-change.svg" alt="">
+                </button>
+            }
+        </div>
+
+        <div class="line-header__details">
+            <div class="line-header__detail">
+                <span class="line-header__label">Naselje</span>
+                <span class="line-header__value">{{ towns() }}</span>
+            </div>
+            <div class="line-header__detail">
+                <span class="line-header__label">Smer</span>
+                <span class="line-header__value">
+                    {{ busStops[0].name }}
+                    <img
+                        class="line-header__arrow"
+                        [class.line-header__arrow--left]="isReturnDirection()"
+                        src="icons/direction-arrow.svg"
+                        alt=""
+                    >
+                    {{ busStops[busStops.length - 1].name }}
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
