@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 
 import { NewsCardComponent } from '../../../shared/news-card/news-card.component';
-import { NewsService } from '../../../shared/news/news.service';
+import { NewsService } from '../../../core/news/news.service';
 
 @Component({
   selector: 'app-news-section',

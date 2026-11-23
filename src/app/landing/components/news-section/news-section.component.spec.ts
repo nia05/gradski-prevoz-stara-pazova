@@ -3,8 +3,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { NewsSectionComponent } from './news-section.component';
-import { createNews, createNewsResponse } from '../../../shared/news/news.generator';
-import { NEWS_URL } from '../../../shared/news/news.constants';
+import { createNews, createNewsResponse } from '../../../core/news/news.generator';
+import { NEWS_URL } from '../../../core/news/news.constants';
 
 describe('NewsSectionComponent', () => {
   let component: NewsSectionComponent;

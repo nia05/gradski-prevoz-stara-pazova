@@ -3,8 +3,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { SearchBusStopSectionComponent } from './search-bus-stop-section.component';
-import { createBusLinesResponse, createSuburbanBusLine } from '../../../shared/bus-lines/bus-lines.generator';
-import { BUS_LINES_URL } from '../../../shared/bus-lines/bus-lines.constants';
+import { createBusLinesResponse, createSuburbanBusLine } from '../../../core/bus-lines/bus-lines.generator';
+import { BUS_LINES_URL } from '../../../core/bus-lines/bus-lines.constants';
 
 describe('SearchBusStopSectionComponent', () => {
   let component: SearchBusStopSectionComponent;

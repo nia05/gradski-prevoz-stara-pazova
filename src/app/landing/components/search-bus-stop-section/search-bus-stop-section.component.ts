@@ -1,7 +1,7 @@
 import { Component, computed, ElementRef, inject, signal, viewChild } from '@angular/core';
 
-import { BusStop } from '../../../shared/bus-lines/bus-lines.model';
-import { BusLinesService } from '../../../shared/bus-lines/bus-lines.service';
+import { BusStop } from '../../../core/bus-lines/bus-lines.model';
+import { BusLinesService } from '../../../core/bus-lines/bus-lines.service';
 import { splitAroundMatch } from '../../../shared/utils';
 import { TextAroundMatch } from '../../../shared/utils.model';
 

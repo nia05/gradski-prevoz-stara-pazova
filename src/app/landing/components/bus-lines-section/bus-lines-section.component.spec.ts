@@ -4,8 +4,8 @@ import { HttpTestingController, provideHttpClientTesting } from '@angular/common
 import { provideRouter } from '@angular/router';
 
 import { BusLinesSectionComponent } from './bus-lines-section.component';
-import { createBusLinesResponse, createSuburbanBusLine, createUrbanBusLine } from '../../../shared/bus-lines/bus-lines.generator';
-import { BUS_LINES_URL } from '../../../shared/bus-lines/bus-lines.constants';
+import { createBusLinesResponse, createSuburbanBusLine, createUrbanBusLine } from '../../../core/bus-lines/bus-lines.generator';
+import { BUS_LINES_URL } from '../../../core/bus-lines/bus-lines.constants';
 
 describe('BusLinesSectionComponent', () => {
   let component: BusLinesSectionComponent;
