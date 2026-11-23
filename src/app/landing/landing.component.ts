@@ -11,7 +11,6 @@ import { NewsSectionComponent } from './components/news-section/news-section.com
     BusLinesSectionComponent, 
     NewsSectionComponent
   ],
-  templateUrl: './landing.component.html',
-  styleUrl: './landing.component.scss'
+  templateUrl: './landing.component.html'
 })
 export class LandingComponent {}
