@@ -19,6 +19,7 @@
         flex: 1;
 
         &-title {
+            color: var(--color-grey);
             margin-bottom: 0.5rem;
             @media (min-width: breakpoints.$tablet) {
                 font-weight: var(--text-subtitle-1-weight);

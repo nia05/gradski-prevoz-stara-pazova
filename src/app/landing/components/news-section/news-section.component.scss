@@ -1,3 +1,5 @@
+@use '../../../../styles/breakpoints';
+
 .news-section {
     background-color: var(--color-grey-8);
 
@@ -6,20 +8,22 @@
     }
 
     &__list {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: var(--page-padding-inline);
-    scrollbar-width: none;
-    padding: 0 var(--page-padding-inline) 0.25rem;
-    margin: 0 calc(-1 * var(--page-padding-inline));
-    list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: var(--page-padding-inline);
+        scrollbar-width: none;
+        padding: 0 var(--page-padding-inline) 0.25rem;
+        margin: 0 calc(-1 * var(--page-padding-inline));
+        list-style: none;
 
         &-item {
             flex: 0 0 20.625rem;
             scroll-snap-align: start;
+            @media (min-width: breakpoints.$desktop) {
+                flex-basis: calc((100% - 2 * 1.5rem) / 3);
+            }
         }
-        
-    }  
+    }
 }
