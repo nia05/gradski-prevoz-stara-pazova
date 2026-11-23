@@ -7,7 +7,6 @@ import { Component, input } from '@angular/core';
   styleUrl: './bus-stop.component.scss'
 })
 export class BusStopComponent {
-  /** From the URL: /linija/:broj/:stanicaId */
-  broj = input.required<string>();
-  stanicaId = input.required<string>();
+  readonly busLineNumber = input.required<string>();
+  readonly busStopId = input.required<string>();
 }

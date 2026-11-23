@@ -14,8 +14,8 @@ describe('BusStopComponent', () => {
 
     fixture = TestBed.createComponent(BusStopComponent);
     component = fixture.componentInstance;
-    fixture.componentRef.setInput('broj', '1');
-    fixture.componentRef.setInput('stanicaId', 'stara-pazova-stara-pazova-as');
+    fixture.componentRef.setInput('busLineNumber', '1');
+    fixture.componentRef.setInput('busStopId', 'stara-pazova-stara-pazova-as');
     fixture.detectChanges();
   });
 
