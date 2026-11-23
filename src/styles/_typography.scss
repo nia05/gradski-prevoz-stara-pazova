@@ -1,10 +1,3 @@
-// Headings and paragraphs — Figma text styles H1–H6, Body 1, Body 2.
-// Colors are the ones the High-fidelity designs use most for each style.
-//
-// Tags get the matching style by default. When the heading level and the look
-// need to differ (e.g. an <h1> that looks like Figma's H4), use a class:
-//   <h1 class="text-h4">Autobuske linije</h1>
-
 @mixin text-style($name) {
   margin: 0;
   font-family: var(--text-#{$name}-family);
@@ -12,10 +5,7 @@
   font-size: var(--text-#{$name}-size);
   letter-spacing: var(--text-#{$name}-tracking);
   line-height: normal;
-}
-
-// ---------- Headings ----------
-// H1–H3 are not used in the current designs; colored like the other headings.
+} 
 
 h1,
 .text-h1 {
@@ -34,39 +24,36 @@ h3,
   @include text-style(h3);
   color: var(--color-dark-blue);
 }
-
-// "Autobuske linije"
+ 
 h4,
 .text-h4 {
   @include text-style(h4);
   color: var(--color-dark-blue);
 }
-
-// Line titles, e.g. "Linija 1"
+ 
 h5,
 .text-h5 {
   @include text-style(h5);
   color: var(--color-dark-blue);
 }
-
-// Stop names, e.g. "Stara Pazova AS"
+ 
 h6,
 .text-h6 {
   @include text-style(h6);
   color: var(--color-dark-blue);
 }
-
-// ---------- Paragraphs ----------
-
-// Body 1 — default paragraph
+ 
 p,
 .text-body-1 {
   @include text-style(body-1);
   color: var(--color-dark-blue-70);
-}
+} 
 
-// Body 2 — smaller paragraph, e.g. "Sledeći polazak"
 .text-body-2 {
   @include text-style(body-2);
   color: var(--color-grey-50);
+}
+
+.subtitle-2 {
+  @include text-style(subtitle-2);
 }
