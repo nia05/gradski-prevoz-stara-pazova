@@ -1,3 +1,13 @@
+export enum BusLineType {
+  Urban = 'urban',
+  Suburban = 'suburban',
+}
+
+export enum DirectionCode {
+  A = 'A',
+  B = 'B',
+}
+
 export interface BusLinesResponse {
   lines: Line[];
 }
@@ -5,24 +15,22 @@ export interface BusLinesResponse {
 export interface Line {
   number: number;
   name: string;
-  type: 'suburban' | 'urban';
+  type: BusLineType;
   validFrom: string;
   registerNumber: number;
   directions: Direction[];
 }
 
 export interface Direction {
-  /** A and B for two-way lines, K for circular lines */
-  code: 'A' | 'B' | 'K';
+  code: DirectionCode;
   from: string;
   to: string;
-  circular: boolean;
-  stops: Stop[];
+  busStops: BusStop[];
   timetable: Timetable;
   note?: string;
 }
 
-export interface Stop {
+export interface BusStop {
   id: string;
   town: string;
   name: string;
@@ -35,12 +43,7 @@ export interface Timetable {
   sunday: Departure[];
 }
 
-export type Day = keyof Timetable;
-
 export interface Departure {
-  number: number;
-  /** "1" or "x1", as written on the PDF */
-  vehicleCode: string;
-  /** Aligned with the direction's `stops` array; null = this departure skips that stop */
+  number: number; 
   times: (string | null)[];
 }
