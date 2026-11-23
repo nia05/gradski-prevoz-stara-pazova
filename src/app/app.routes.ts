@@ -7,7 +7,7 @@ import { APP_TITLE, BUS_LINE_PATH, HOME_PATH, UNKNOWN_PATH } from './app.routes.
 
 export const routes: Routes = [
   { path: HOME_PATH, component: LandingComponent, title: APP_TITLE },
-  { path: `${BUS_LINE_PATH}/:broj`, component: LineComponent },
-  { path: `${BUS_LINE_PATH}/:broj/:stanicaId`, component: BusStopComponent },
+  { path: `${BUS_LINE_PATH}/:busLineNumber`, component: LineComponent },
+  { path: `${BUS_LINE_PATH}/:busLineNumber/:busStopId`, component: BusStopComponent },
   { path: UNKNOWN_PATH, redirectTo: HOME_PATH },
 ];
