@@ -2,7 +2,7 @@
   "lines": [
     {
       "number": 1,
-      "name": "Stara Pazova – Nova Pazova (aerodrom)",
+      "name": "Stara Pazova – Nova Pazova",
       "type": "suburban",
       "validFrom": "2026-10-05",
       "registerNumber": 1,
@@ -7381,7 +7381,7 @@
     },
     {
       "number": 6,
-      "name": "Gradska linija Stara Pazova",
+      "name": "Stara Pazova",
       "type": "urban",
       "validFrom": "2026-10-05",
       "registerNumber": 6,
@@ -8625,7 +8625,7 @@
     },
     {
       "number": 7,
-      "name": "Gradska linija Nova Pazova",
+      "name": "Nova Pazova",
       "type": "urban",
       "validFrom": "2026-08-28",
       "registerNumber": 7,
