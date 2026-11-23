@@ -1,0 +1,26 @@
+.bus-stop-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 var(--page-padding-inline) 1rem;
+
+    &__tab {
+        padding: 0.875rem 1rem;
+        border-bottom: 0.125rem solid var(--color-dark-blue);
+        font-family: var(--text-button-family);
+        font-weight: var(--text-button-weight);
+        font-size: var(--text-button-size);
+        letter-spacing: var(--text-button-tracking);
+        text-transform: uppercase;
+        color: var(--color-dark-blue);
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+}

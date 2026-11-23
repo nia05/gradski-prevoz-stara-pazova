@@ -1,0 +1,17 @@
+<section class="bus-stop-list">
+    <p class="bus-stop-list__tab">Lista stajališta</p>
+
+    <ul class="bus-stop-list__items">
+        @for (busStop of busStops(); track $index) {
+            <li>
+                <app-bus-stop-item
+                    [busLineNumber]="busLineNumber()"
+                    [busStopId]="busStop.id"
+                    [busStopName]="busStop.name"
+                    [busStopTown]="busStop.town"
+                    [isTownVisible]="isTownVisible()"
+                />
+            </li>
+        }
+    </ul>
+</section>
