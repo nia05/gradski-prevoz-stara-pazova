@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BusStopComponent } from './bus-stop.component';
+import { BusStopPageComponent } from './bus-stop-page.component';
 
-describe('BusStopComponent', () => {
-  let component: BusStopComponent;
-  let fixture: ComponentFixture<BusStopComponent>;
+describe('BusStopPageComponent', () => {
+  let component: BusStopPageComponent;
+  let fixture: ComponentFixture<BusStopPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BusStopComponent]
+      imports: [BusStopPageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BusStopComponent);
+    fixture = TestBed.createComponent(BusStopPageComponent);
     component = fixture.componentInstance;
     fixture.componentRef.setInput('busLineNumber', '1');
     fixture.componentRef.setInput('busStopId', 'stara-pazova-stara-pazova-as');
