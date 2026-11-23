@@ -1,62 +1,15 @@
 @if (busLine(); as busLine) {
-    @let firstDirectionBusStops = busLine.directions[0].busStops;
-    @let busStops = isReturnDirection() ? busLine.directions[1].busStops : firstDirectionBusStops;
+    @let busStops = isReturnDirection() ? busLine.directions[1].busStops : busLine.directions[0].busStops;
 
-    <section class="bus-line-header">
-        <nav aria-label="Putanja">
-            <ol class="breadcrumb">
-                <li><a class="breadcrumb__link" [routerLink]="['/', homePath]">Početna</a></li>
-                <li class="breadcrumb__current" aria-current="page">Linija {{ busLine.number }}</li>
-            </ol>
-        </nav>
+    <app-line-header
+        [busLine]="busLine"
+        [isReturnDirection]="isReturnDirection()"
+        (directionChange)="changeDirection()"
+    />
 
-        <div class="bus-line-header__info">
-            <div class="bus-line-header__title">
-                <h5>Linija {{ busLine.number }}</h5>
-                @if (busLine.directions.length > 1) {
-                    <button class="icon-button" type="button" aria-label="Promeni smer" (click)="changeDirection()">
-                        <img src="icons/direction-change.svg" alt="">
-                    </button>
-                }
-            </div>
-
-            <div class="bus-line-header__details">
-                <div class="bus-line-header__detail">
-                    <span class="bus-line-header__label">Naselje</span>
-                    <span class="bus-line-header__value">{{ getTowns(firstDirectionBusStops) }}</span>
-                </div>
-                <div class="bus-line-header__detail">
-                    <span class="bus-line-header__label">Smer</span>
-                    <span class="bus-line-header__value">
-                        {{ firstDirectionBusStops[0].name }}
-                        <img
-                            class="bus-line-header__arrow"
-                            [class.bus-line-header__arrow--left]="isReturnDirection()"
-                            src="icons/direction-arrow.svg"
-                            alt=""
-                        >
-                        {{ firstDirectionBusStops[firstDirectionBusStops.length - 1].name }}
-                    </span>
-                </div>
-            </div>
-        </div>
-
-        <p class="tab">Lista stajališta</p>
-    </section>
-
-    <section class="bus-stops">
-        <ul class="bus-stops__list">
-            @for (busStop of busStops; track $index) {
-                <li>
-                    <app-bus-stop-item
-                        [busLineNumber]="busLine.number"
-                        [busStopId]="busStop.id"
-                        [busStopName]="busStop.name"
-                        [busStopTown]="busStop.town"
-                        [isTownVisible]="busLine.type === busLineType.Suburban"
-                    />
-                </li>
-            }
-        </ul>
-    </section>
+    <app-bus-stop-list
+        [busLineNumber]="busLine.number"
+        [busStops]="busStops"
+        [isTownVisible]="busLine.type === busLineType.Suburban"
+    />
 }

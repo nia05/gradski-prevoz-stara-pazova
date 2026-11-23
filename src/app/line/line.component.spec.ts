@@ -51,7 +51,7 @@ describe('LineComponent', () => {
     openBusLine(suburbanBusLine.number);
     const page: HTMLElement = fixture.nativeElement;
     expect(page.querySelector('h5')?.textContent).toBe(`Linija ${suburbanBusLine.number}`);
-    expect(page.querySelector('.bus-line-header__value')?.textContent).toBe('Stara Pazova, Nova Pazova');
+    expect(page.querySelector('.line-header__value')?.textContent).toBe('Stara Pazova, Nova Pazova');
     expect(getBusStopNames()).toEqual(['Stara Pazova AS', 'Centar']);
   });
 
