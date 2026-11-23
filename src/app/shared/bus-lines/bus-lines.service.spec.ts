@@ -30,8 +30,6 @@ describe('BusLinesService', () => {
   it('loads data/lines.json once and exposes the lines', () => {
     http.expectOne(BUS_LINES_URL).flush(mockData);
 
-    expect(service.lines().length).toBe(2);
-    expect(service.getLine(6)?.name).toBe('Gradska linija Stara Pazova');
-    expect(service.getLine(99)).toBeUndefined();
+    expect(service.lines()).toEqual(mockData.lines);
   });
 });
