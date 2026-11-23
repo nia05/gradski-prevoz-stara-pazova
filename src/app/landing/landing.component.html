@@ -6,7 +6,7 @@
     <ul class="bus-lines">
         @for (busLine of urbanBusLines(); track busLine.number) {
             <li>
-                <app-bus-line-item [busLineNumber]="busLine.number" />
+                <app-bus-line-item [busLineNumber]="busLine.number" [busLineName]="busLine.name" />
             </li>
         }
     </ul>
@@ -15,7 +15,7 @@
     <ul class="bus-lines">
         @for (busLine of suburbanBusLines(); track busLine.number) {
             <li>
-                <app-bus-line-item [busLineNumber]="busLine.number" />
+                <app-bus-line-item [busLineNumber]="busLine.number" [busLineName]="busLine.name" />
             </li>
         }
     </ul>

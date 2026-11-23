@@ -1,0 +1,20 @@
+@use '../../../styles/tokens';
+
+.bus-line-item {
+    display: flex;
+    align-items: center;
+    height: 3.75rem;
+    padding: 0 1rem;
+    text-decoration: none;
+    color: var(--color-dark-blue);
+    background-color: var(--color-grey-8);
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    &__number {
+        margin-right: 0.75rem;
+        font-weight: var(--font-weight-bold);
+    }
+    &__name {
+        flex: 1;
+    }
+}
