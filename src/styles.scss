@@ -4,6 +4,7 @@
 @use 'styles/typography';
 @use 'styles/buttons';
 @use 'styles/forms';
+@use 'styles/layout';
 
 body {
     background-color: var(--color-white);
