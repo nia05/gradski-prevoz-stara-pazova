@@ -2,7 +2,8 @@ import { Component, computed, ElementRef, inject, signal, viewChild } from '@ang
 
 import { BusStop } from '../../../shared/bus-lines/bus-lines.model';
 import { BusLinesService } from '../../../shared/bus-lines/bus-lines.service';
-import { splitAroundMatch, TextAroundMatch } from '../../../shared/utils';
+import { splitAroundMatch } from '../../../shared/utils';
+import { TextAroundMatch } from '../../../shared/utils.model';
 
 @Component({
   selector: 'app-search-bus-stop-section',

@@ -4,6 +4,7 @@ import { HttpTestingController, provideHttpClientTesting } from '@angular/common
 
 import { SearchBusStopSectionComponent } from './search-bus-stop-section.component';
 import { BusLinesResponse, BusLineType, DirectionCode } from '../../../shared/bus-lines/bus-lines.model';
+import { BUS_LINES_URL } from '../../../shared/bus-lines/bus-lines.constants';
 
 describe('SearchBusStopSectionComponent', () => {
   let component: SearchBusStopSectionComponent;
@@ -43,7 +44,7 @@ describe('SearchBusStopSectionComponent', () => {
 
     fixture = TestBed.createComponent(SearchBusStopSectionComponent);
     component = fixture.componentInstance;
-    TestBed.inject(HttpTestingController).expectOne('data/lines.json').flush(mockData);
+    TestBed.inject(HttpTestingController).expectOne(BUS_LINES_URL).flush(mockData);
     fixture.detectChanges();
   });
 
