@@ -6,12 +6,12 @@ import { LineHeaderComponent } from './components/line-header/line-header.compon
 import { BusStopListComponent } from './components/bus-stop-list/bus-stop-list.component';
 
 @Component({
-  selector: 'app-line',
+  selector: 'app-line-page',
   imports: [LineHeaderComponent, BusStopListComponent],
-  templateUrl: './line.component.html',
-  styleUrl: './line.component.scss'
+  templateUrl: './line-page.component.html',
+  styleUrl: './line-page.component.scss'
 })
-export class LineComponent {
+export class LinePageComponent {
   private readonly busLines = inject(BusLinesService);
 
   readonly busLineNumber = input.required<string>();

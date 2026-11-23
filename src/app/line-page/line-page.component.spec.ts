@@ -3,25 +3,25 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideRouter } from '@angular/router';
 
-import { LineComponent } from './line.component';
+import { LinePageComponent } from './line-page.component';
 import { createBusLinesResponse, createSuburbanBusLine, createUrbanBusLine } from '../core/bus-lines/bus-lines.generator';
 import { BUS_LINES_URL } from '../core/bus-lines/bus-lines.constants';
 
-describe('LineComponent', () => {
-  let component: LineComponent;
-  let fixture: ComponentFixture<LineComponent>;
+describe('LinePageComponent', () => {
+  let component: LinePageComponent;
+  let fixture: ComponentFixture<LinePageComponent>;
 
   const suburbanBusLine = createSuburbanBusLine();
   const urbanBusLine = createUrbanBusLine();
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LineComponent],
+      imports: [LinePageComponent],
       providers: [provideHttpClient(), provideHttpClientTesting(), provideRouter([])],
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LineComponent);
+    fixture = TestBed.createComponent(LinePageComponent);
     component = fixture.componentInstance;
     TestBed.inject(HttpTestingController)
       .expectOne(BUS_LINES_URL)
