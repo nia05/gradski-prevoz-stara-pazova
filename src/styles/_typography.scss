@@ -54,6 +54,10 @@ p,
   color: var(--color-grey-50);
 }
 
+.subtitle-1 {
+  @include text-style(subtitle-1);
+}
+
 .subtitle-2 {
   @include text-style(subtitle-2);
 }
