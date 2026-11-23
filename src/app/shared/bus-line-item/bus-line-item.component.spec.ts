@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 
 import { BusLineItemComponent } from './bus-line-item.component';
-import { createUrbanBusLine } from '../bus-lines/bus-lines.generator';
+import { createUrbanBusLine } from '../../core/bus-lines/bus-lines.generator';
 import { BUS_LINE_PATH } from '../../app.routes.constants';
 
 describe('BusLineItemComponent', () => {
