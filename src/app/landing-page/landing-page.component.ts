@@ -5,12 +5,12 @@ import { BusLinesSectionComponent } from './components/bus-lines-section/bus-lin
 import { NewsSectionComponent } from './components/news-section/news-section.component';
 
 @Component({
-  selector: 'app-landing',
+  selector: 'app-landing-page',
   imports: [
     SearchBusStopSectionComponent, 
     BusLinesSectionComponent, 
     NewsSectionComponent
   ],
-  templateUrl: './landing.component.html'
+  templateUrl: './landing-page.component.html'
 })
-export class LandingComponent {}
+export class LandingPageComponent {}
