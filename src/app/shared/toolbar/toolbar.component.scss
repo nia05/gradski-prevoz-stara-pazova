@@ -7,8 +7,11 @@
     background-color: var(--color-white);
     box-shadow: var(--shadow);
 
-    &__title {
+    &__home-link {
         text-decoration: none;
+    }
+
+    &__title {
         @media (min-width: breakpoints.$desktop) {
             font-family: var(--text-h5-family);
             font-weight: var(--text-h5-weight);
