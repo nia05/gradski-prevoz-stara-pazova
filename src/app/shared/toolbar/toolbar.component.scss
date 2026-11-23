@@ -8,6 +8,7 @@
     box-shadow: var(--shadow);
 
     &__title {
+        text-decoration: none;
         @media (min-width: breakpoints.$desktop) {
             font-family: var(--text-h5-family);
             font-weight: var(--text-h5-weight);
