@@ -1,0 +1,17 @@
+.bus-lines-section {
+    h5 {
+        margin-bottom: 1.5rem;
+    } 
+    .subtitle-2 {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.bus-lines {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    &:first-of-type {
+        margin: 0 0 1.5rem;
+    }
+}
