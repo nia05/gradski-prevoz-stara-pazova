@@ -3,19 +3,14 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { BusLinesService } from './bus-lines.service';
-import { BusLinesResponse, BusLineType } from './bus-lines.model';
+import { createBusLinesResponse } from './bus-lines.generator';
 import { BUS_LINES_URL } from './bus-lines.constants';
 
 describe('BusLinesService', () => {
   let service: BusLinesService;
   let http: HttpTestingController;
 
-  const mockData = {
-    lines: [
-      { number: 1, name: 'Stara Pazova – Nova Pazova', type: BusLineType.Suburban, validFrom: '', registerNumber: 1, directions: [] },
-      { number: 6, name: 'Gradska linija Stara Pazova', type: BusLineType.Urban, validFrom: '', registerNumber: 6, directions: [] },
-    ],
-  } as BusLinesResponse;
+  const mockData = createBusLinesResponse();
 
   beforeEach(() => {
     TestBed.configureTestingModule({
