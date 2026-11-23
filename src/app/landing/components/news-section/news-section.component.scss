@@ -1,0 +1,25 @@
+.news-section {
+    background-color: var(--color-grey-8);
+
+    h5 {
+        margin-bottom: 1.5rem;
+    }
+
+    &__list {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1rem;
+    scrollbar-width: none;
+    padding: 0 1rem 0.25rem;
+    margin: 0 -1rem;
+    list-style: none;
+
+        &-item {
+            flex: 0 0 20.625rem;
+            scroll-snap-align: start;
+        }
+        
+    }  
+}

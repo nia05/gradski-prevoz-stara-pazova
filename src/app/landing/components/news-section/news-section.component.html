@@ -1,1 +1,15 @@
-<p>news-section works!</p>
+<section class="news-section container">
+    <h5>Vesti</h5>
+
+    <ul class="news-section__list">
+        @for (newsItem of news(); track newsItem.id) {
+            <li class="news-section__list-item">
+                <app-news-card 
+                    [newsImage]="newsItem.image" 
+                    [newsTitle]="newsItem.title" 
+                    [newsDate]="newsItem.date" 
+                />
+            </li>
+        }
+    </ul>
+</section>
