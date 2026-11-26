@@ -1,7 +1,7 @@
 @let busStops = firstDirectionBusStops();
 
 <section class="page-header line-header">
-    <app-breadcrumb [parentPages]="[]" currentPageLabel="Linija {{ busLine().number }}" />
+    <app-breadcrumb [links]="breadcrumbLinks()" />
 
     <div class="page-header__info">
         <div class="page-header__title">

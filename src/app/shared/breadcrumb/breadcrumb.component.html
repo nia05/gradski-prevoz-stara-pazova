@@ -1,11 +1,16 @@
 <nav aria-label="Putanja">
     <ol class="breadcrumb">
-        <li class="breadcrumb__item">
-            <a class="breadcrumb__link" [routerLink]="['/', homePath]">Početna</a>
-        </li>
-        <li class="breadcrumb__item">
-            <img src="icons/breadcrumb-arrow.svg" alt="">
-            <span class="breadcrumb__current" aria-current="page">{{ currentPageLabel() }}</span>
-        </li>
+        @for (breadcrumbLink of links(); track breadcrumbLink.name) {
+            <li class="breadcrumb__item">
+                @if (!$first) {
+                    <img src="icons/breadcrumb-arrow.svg" alt="">
+                }
+                @if ($last) {
+                    <span class="breadcrumb__current" aria-current="page">{{ breadcrumbLink.name }}</span>
+                } @else {
+                    <a class="breadcrumb__link" [routerLink]="breadcrumbLink.link">{{ breadcrumbLink.name }}</a>
+                }
+            </li>
+        }
     </ol>
 </nav>

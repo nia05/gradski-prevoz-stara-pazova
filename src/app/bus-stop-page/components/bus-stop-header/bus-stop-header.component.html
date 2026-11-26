@@ -1,7 +1,7 @@
 @let busStops = firstDirectionBusStops();
 
 <section class="page-header">
-    <app-breadcrumb [parentPages]="breadcrumbParentPages()" [currentPageLabel]="busStop().name" />
+    <app-breadcrumb [links]="breadcrumbLinks()" />
 
     <div class="page-header__info">
         <div class="page-header__title">

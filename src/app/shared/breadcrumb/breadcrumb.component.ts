@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { HOME_PATH } from '../../app.routes.constants';
+import { BreadcrumbLink } from './breadcrumb.model';
 
 @Component({
   selector: 'app-breadcrumb',
@@ -10,7 +10,5 @@ import { HOME_PATH } from '../../app.routes.constants';
   styleUrl: './breadcrumb.component.scss'
 })
 export class BreadcrumbComponent {
-  readonly currentPageLabel = input.required<string>();
-
-  protected readonly homePath = HOME_PATH;
+  readonly links = input.required<BreadcrumbLink[]>();
 }

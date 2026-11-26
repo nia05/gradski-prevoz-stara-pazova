@@ -3,6 +3,7 @@ import { Component, computed, input, output } from '@angular/core';
 import { BusStop, Line, TimetableDay } from '../../../core/bus-lines/bus-lines.model';
 import { BreadcrumbComponent } from '../../../shared/breadcrumb/breadcrumb.component';
 import { BreadcrumbLink } from '../../../shared/breadcrumb/breadcrumb.model';
+import { HOME_BREADCRUMB_LINK } from '../../../shared/breadcrumb/breadcrumb.constants';
 import { BUS_LINE_PATH } from '../../../app.routes.constants';
 import { DAY_TABS } from './bus-stop-header.constants';
 
@@ -24,9 +25,14 @@ export class BusStopHeaderComponent {
 
   protected readonly firstDirectionBusStops = computed(() => this.busLine().directions[0].busStops);
 
-  protected readonly breadcrumbParentPages = computed<BreadcrumbLink[]>(() => [
-    { label: `Linija ${this.busLine().number}`, path: ['/', BUS_LINE_PATH, this.busLine().number] },
-  ]);
+  protected readonly breadcrumbLinks = computed<BreadcrumbLink[]>(() => {
+    const busLineLink = ['/', BUS_LINE_PATH, this.busLine().number];
+    return [
+      HOME_BREADCRUMB_LINK,
+      { name: `Linija ${this.busLine().number}`, link: busLineLink },
+      { name: this.busStop().name, link: [...busLineLink, this.busStop().id] },
+    ];
+  });
 
   private readonly otherDirection = computed(() => {
     const directions = this.busLine().directions;
