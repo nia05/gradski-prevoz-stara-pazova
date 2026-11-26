@@ -1,1 +1,20 @@
-<p>Linija {{ busLineNumber() }} – stajalište {{ busStopId() }}</p>
+@if (busLine(); as busLine) {
+    @let direction = isReturnDirection() ? busLine.directions[1] : busLine.directions[0];
+    @let busStop = getBusStop(direction);
+
+    @if (busStop) {
+        <app-bus-stop-header
+            [busLine]="busLine"
+            [busStop]="busStop"
+            [isReturnDirection]="isReturnDirection()"
+            [selectedDay]="selectedDay()"
+            (directionChange)="changeDirection()"
+            (dayChange)="selectedDay.set($event)"
+        />
+
+        <app-departure-schedule
+            [departureTimes]="getDepartureTimes(direction)"
+            [currentTime]="currentTimeForSelectedDay()"
+        />
+    }
+}
