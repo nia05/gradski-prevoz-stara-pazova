@@ -1,0 +1,25 @@
+.day-tabs {
+    display: flex;
+
+    &__tab {
+        flex: 1;
+        height: 3rem;
+        padding: 0;
+        border: none;
+        border-bottom: 0.0625rem solid var(--color-grey-50);
+        background-color: transparent;
+        font-family: var(--text-button-family);
+        font-weight: var(--text-button-weight);
+        font-size: var(--text-button-size);
+        letter-spacing: var(--text-button-tracking);
+        text-transform: uppercase;
+        color: var(--color-grey);
+        cursor: pointer;
+        transition: color ease-in-out 0.3s, border-color ease-in-out 0.3s;
+
+        &--selected {
+            border-bottom-color: var(--color-dark-blue);
+            color: var(--color-dark-blue);
+        }
+    }
+}
