@@ -32,4 +32,13 @@ describe('BusLinesService', () => {
 
     expect(service.lines()).toEqual(mockData.lines);
   });
+
+  it('finds the first bus line that stops at a bus stop', () => {
+    http.expectOne(BUS_LINES_URL).flush(mockData);
+    const suburbanBusLine = mockData.lines[0];
+    const busStopOnlyOnSuburbanBusLine = suburbanBusLine.directions[1].busStops[1];
+
+    expect(service.findBusLineWithBusStop(busStopOnlyOnSuburbanBusLine.id)).toBe(suburbanBusLine);
+    expect(service.findBusLineWithBusStop('beograd')).toBeUndefined();
+  });
 });

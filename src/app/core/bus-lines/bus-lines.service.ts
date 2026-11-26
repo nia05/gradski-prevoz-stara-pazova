@@ -2,7 +2,7 @@ import { computed, inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
 
-import { BusLinesResponse, BusStop } from './bus-lines.model';
+import { BusLinesResponse, BusStop, Line } from './bus-lines.model';
 import { BUS_LINES_URL, EMPTY_BUS_LINES_RESPONSE } from './bus-lines.constants';
 import { toLowercaseWithoutDiacritics } from '../../shared/utils';
 
@@ -22,6 +22,12 @@ export class BusLinesService {
     const allBusStops = allDirections.flatMap(direction => direction.busStops);
     return allBusStops.filter((busStop, index) => allBusStops.findIndex(otherBusStop => otherBusStop.id === busStop.id) === index);
   });
+
+  findBusLineWithBusStop(busStopId: string): Line | undefined {
+    return this.lines().find(busLine =>
+      busLine.directions.some(direction => direction.busStops.some(busStop => busStop.id === busStopId))
+    );
+  }
 
   searchBusStops(searchTerm: string): BusStop[] {
     const term = toLowercaseWithoutDiacritics(searchTerm);
