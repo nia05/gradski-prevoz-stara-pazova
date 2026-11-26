@@ -1,0 +1,31 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: var(--text-body-2-family);
+    font-size: var(--text-body-2-size);
+    letter-spacing: var(--text-body-2-tracking);
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    &__link {
+        color: var(--color-grey);
+        text-decoration: none;
+        transition: color ease-in-out 0.3s;
+
+        &:hover {
+            color: var(--color-grey-50);
+        }
+    }
+
+    &__current {
+        color: var(--color-dark-blue-70);
+    }
+}

@@ -1,0 +1,11 @@
+<nav aria-label="Putanja">
+    <ol class="breadcrumb">
+        <li class="breadcrumb__item">
+            <a class="breadcrumb__link" [routerLink]="['/', homePath]">Početna</a>
+        </li>
+        <li class="breadcrumb__item">
+            <img src="icons/breadcrumb-arrow.svg" alt="">
+            <span class="breadcrumb__current" aria-current="page">{{ currentPageLabel() }}</span>
+        </li>
+    </ol>
+</nav>
