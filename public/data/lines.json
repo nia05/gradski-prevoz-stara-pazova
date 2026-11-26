@@ -1450,8 +1450,8 @@
           "code": "A",
           "from": "Stara Pazova – Stara Pazova AS",
           "to": "Krnješevci – Industrijska zona - okretnica",
-          "skippedBusStopIds": [],
-          "routeChangeNewsId": null,
+          "skippedBusStopIds": ["stara-pazova-restoran-putnik"],
+          "routeChangeNewsId": 4,
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
@@ -7410,8 +7410,8 @@
           "code": "B",
           "from": "Stara Pazova AS",
           "to": "Železnička stanica St. Pazova",
-          "skippedBusStopIds": ["stara-pazova-jana-bota"],
-          "routeChangeNewsId": 2,
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
