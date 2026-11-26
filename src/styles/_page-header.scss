@@ -1,0 +1,65 @@
+@use './breakpoints';
+
+.page-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem var(--page-padding-inline) 0;
+    background-color: var(--color-grey-4);
+    box-shadow: var(--shadow);
+    @media (min-width: breakpoints.$desktop) {
+        padding-top: 2rem;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &__detail {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    &__label {
+        flex: 0 0 3.75rem;
+        font-family: var(--text-subtitle-1-family);
+        font-weight: var(--font-weight-semibold);
+        font-size: var(--text-subtitle-1-size);
+        letter-spacing: var(--text-subtitle-1-tracking);
+        color: var(--color-dark-blue-70);
+    }
+
+    &__value {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem;
+        font-family: var(--text-body-1-family);
+        font-weight: var(--text-body-1-weight);
+        font-size: var(--text-body-1-size);
+        letter-spacing: var(--text-body-1-tracking);
+        color: var(--color-grey);
+    }
+
+    &__arrow {
+        transition: transform 0.2s;
+
+        &--left {
+            transform: rotate(180deg);
+        }
+    }
+}
