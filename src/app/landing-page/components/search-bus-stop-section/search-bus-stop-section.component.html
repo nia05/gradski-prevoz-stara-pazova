@@ -30,7 +30,7 @@
                 </ul>
             }
         </div>
-        <button class="btn btn--primary btn--block search-bus-stop__button" type="button" [disabled]="!selectedBusStop()">
+        <button class="btn btn--primary btn--block search-bus-stop__button" type="button" [disabled]="!selectedBusStop()" (click)="openTimetable()">
             Pogledaj red vožnje
         </button>
     </div>

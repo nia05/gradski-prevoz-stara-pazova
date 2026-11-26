@@ -1,10 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideRouter, Router } from '@angular/router';
 
 import { SearchBusStopSectionComponent } from './search-bus-stop-section.component';
 import { createBusLinesResponse, createSuburbanBusLine } from '../../../core/bus-lines/bus-lines.generator';
 import { BUS_LINES_URL } from '../../../core/bus-lines/bus-lines.constants';
+import { BUS_LINE_PATH } from '../../../app.routes.constants';
 
 describe('SearchBusStopSectionComponent', () => {
   let component: SearchBusStopSectionComponent;
@@ -15,7 +17,7 @@ describe('SearchBusStopSectionComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [SearchBusStopSectionComponent],
-      providers: [provideHttpClient(), provideHttpClientTesting()],
+      providers: [provideHttpClient(), provideHttpClientTesting(), provideRouter([])],
     })
     .compileComponents();
 
@@ -118,6 +120,20 @@ describe('SearchBusStopSectionComponent', () => {
     fixture.nativeElement.querySelector('.search__option').click();
     fixture.detectChanges();
     expect(button.disabled).toBeFalse();
+  });
+
+  it('opens the timetable of the chosen bus stop', () => {
+    const router = TestBed.inject(Router);
+    spyOn(router, 'navigate');
+    const busLine = mockData.lines[0];
+    const busStop = busLine.directions[0].busStops[0];
+
+    type('stara');
+    fixture.nativeElement.querySelector('.search__option').click();
+    fixture.detectChanges();
+    fixture.nativeElement.querySelector('.btn--primary').click();
+
+    expect(router.navigate).toHaveBeenCalledWith(['/', BUS_LINE_PATH, busLine.number, busStop.id]);
   });
 
   it('opens the dropdown again when the text is changed after choosing', () => {

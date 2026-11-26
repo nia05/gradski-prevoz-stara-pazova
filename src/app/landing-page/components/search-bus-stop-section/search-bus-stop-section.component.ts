@@ -1,9 +1,11 @@
 import { Component, computed, ElementRef, inject, signal, viewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { BusStop } from '../../../core/bus-lines/bus-lines.model';
 import { BusLinesService } from '../../../core/bus-lines/bus-lines.service';
 import { splitAroundMatch } from '../../../shared/utils';
 import { TextAroundMatch } from '../../../shared/utils.model';
+import { BUS_LINE_PATH } from '../../../app.routes.constants';
 
 @Component({
   selector: 'app-search-bus-stop-section',
@@ -13,6 +15,7 @@ import { TextAroundMatch } from '../../../shared/utils.model';
 })
 export class SearchBusStopSectionComponent {
   private readonly busLines = inject(BusLinesService);
+  private readonly router = inject(Router);
   private readonly searchInput = viewChild.required<ElementRef<HTMLInputElement>>('searchInput');
 
   protected readonly searchTerm = signal('');
@@ -38,5 +41,17 @@ export class SearchBusStopSectionComponent {
 
   protected highlightSearchTerm(text: string): TextAroundMatch {
     return splitAroundMatch(text, this.searchTerm());
+  }
+
+  protected openTimetable(): void {
+    const busStop = this.selectedBusStop();
+    if (!busStop) {
+      return;
+    }
+    const busLine = this.busLines.findBusLineWithBusStop(busStop.id);
+    if (!busLine) {
+      return;
+    }
+    this.router.navigate(['/', BUS_LINE_PATH, busLine.number, busStop.id]);
   }
 }
