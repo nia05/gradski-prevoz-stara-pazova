@@ -1,0 +1,23 @@
+<section class="page-header">
+    <app-breadcrumb [links]="breadcrumbLinks" />
+    <h5>Vesti</h5>
+</section>
+
+<section class="news-list-page__content">
+    <ul class="news-list-page__list">
+        @for (newsItem of visibleNews(); track newsItem.id) {
+            <li class="news-list-page__item">
+                <app-news-card
+                    [newsId]="newsItem.id"
+                    [newsImage]="newsItem.image"
+                    [newsTitle]="newsItem.title"
+                    [newsDate]="newsItem.date"
+                />
+            </li>
+        }
+    </ul>
+
+    @if (hasOlderNews()) {
+        <button class="btn btn--secondary" type="button" (click)="showOlderNews()">Starije vesti</button>
+    }
+</section>
