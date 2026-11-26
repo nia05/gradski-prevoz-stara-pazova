@@ -6,5 +6,7 @@ export enum IconPath {
   Delete = 'icons/delete.svg',
   DirectionArrow = 'icons/direction-arrow.svg',
   DirectionChange = 'icons/direction-change.svg',
+  List = 'icons/list.svg',
+  Map = 'icons/map.svg',
   Warning = 'icons/warning.svg',
 }

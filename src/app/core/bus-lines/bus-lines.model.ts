@@ -33,6 +33,7 @@ export interface Direction {
   to: string;
   skippedBusStopIds: string[];
   routeChangeNewsId: number | null;
+  mapId: string | null;
   busStops: BusStop[];
   timetable: Timetable;
   note?: string;

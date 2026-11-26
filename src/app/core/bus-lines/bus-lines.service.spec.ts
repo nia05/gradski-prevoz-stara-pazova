@@ -3,7 +3,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { BusLinesService } from './bus-lines.service';
-import { createBusLinesResponse } from './bus-lines.generator';
+import { createBusLinesResponse, createBusStop, createDirection, createUrbanBusLine } from './bus-lines.generator';
 import { BUS_LINES_URL } from './bus-lines.constants';
 
 describe('BusLinesService', () => {
@@ -40,5 +40,14 @@ describe('BusLinesService', () => {
 
     expect(service.findBusLineWithBusStop(busStopOnlyOnSuburbanBusLine.id)).toBe(suburbanBusLine);
     expect(service.findBusLineWithBusStop('beograd')).toBeUndefined();
+  });
+
+  it('finds a bus stop on both sides of the road only once', () => {
+    const bazeniOnRightSide = createBusStop({ id: 'nova-pazova-bazeni-d', town: 'Nova Pazova', name: 'Bazeni' });
+    const bazeniOnLeftSide = createBusStop({ id: 'nova-pazova-bazeni-l', town: 'Nova Pazova', name: 'Bazeni' });
+    const busLine = createUrbanBusLine({ directions: [createDirection({ busStops: [bazeniOnRightSide, bazeniOnLeftSide] })] });
+    http.expectOne(BUS_LINES_URL).flush(createBusLinesResponse({ lines: [busLine] }));
+
+    expect(service.searchBusStops('bazeni')).toEqual([bazeniOnRightSide]);
   });
 });

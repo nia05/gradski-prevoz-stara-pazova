@@ -20,7 +20,9 @@ export class LineHeaderComponent {
   readonly isReturnDirection = input.required<boolean>();
   readonly skippedBusStopNames = input.required<string[]>();
   readonly routeChangeNewsId = input.required<number | null>();
+  readonly isMapVisible = input.required<boolean>();
   readonly directionChange = output<void>();
+  readonly mapVisibilityChange = output<void>();
 
   protected readonly iconPath = IconPath;
 
@@ -33,6 +35,12 @@ export class LineHeaderComponent {
 
   protected readonly firstDirectionBusStops = computed(() => this.busLine().directions[0].busStops);
 
+  protected readonly hasMap = computed(() => {
+    const directions = this.busLine().directions;
+    const shownDirection = this.isReturnDirection() ? directions[1] : directions[0];
+    return shownDirection.mapId !== null;
+  });
+
   protected readonly towns = computed(() => {
     const allTowns = this.firstDirectionBusStops().map(busStop => busStop.town);
     return [...new Set(allTowns)].join(', ');
@@ -44,4 +52,12 @@ export class LineHeaderComponent {
     const lastBusStop = otherDirection.busStops[otherDirection.busStops.length - 1];
     return `Promeni smer ka ${lastBusStop.name}`;
   });
+
+  protected readonly mapButtonLabel = computed(
+    () => this.isMapVisible() ? 'Pogledaj listu stajališta' : 'Pogledaj liniju na mapi'
+  );
+
+  protected readonly mapButtonIconPath = computed(
+    () => this.isMapVisible() ? IconPath.List : IconPath.Map
+  );
 }

@@ -6,7 +6,7 @@ import { provideRouter } from '@angular/router';
 import { LinePageComponent } from './line-page.component';
 import { createBusLinesResponse, createDirection, createSuburbanBusLine, createUrbanBusLine } from '../core/bus-lines/bus-lines.generator';
 import { DirectionCode } from '../core/bus-lines/bus-lines.model';
-import { BUS_LINES_URL } from '../core/bus-lines/bus-lines.constants';
+import { BUS_LINES_URL, GOOGLE_MY_MAPS_EMBED_URL } from '../core/bus-lines/bus-lines.constants';
 import { getBusLinePageName } from '../app.routes.page-names';
 
 describe('LinePageComponent', () => {
@@ -65,7 +65,7 @@ describe('LinePageComponent', () => {
     openBusLine(suburbanBusLine.number);
     getChangeDirectionButton()?.click();
     fixture.detectChanges();
-    expect(getBusStopNames()).toEqual(['Centar', 'Ćirila i Metodija 1 - d']);
+    expect(getBusStopNames()).toEqual(['Centar', 'Ćirila i Metodija 1']);
   });
 
   it('has no change direction button for a bus line with one direction', () => {
@@ -84,5 +84,23 @@ describe('LinePageComponent', () => {
   it('shows no warning when the bus stops at every bus stop', () => {
     openBusLine(suburbanBusLine.number);
     expect(fixture.nativeElement.querySelector('.bus-stop-warning')).toBeNull();
+  });
+
+  it('shows the map instead of the bus stop list when the map button is clicked', () => {
+    openBusLine(suburbanBusLine.number);
+    fixture.nativeElement.querySelectorAll('.icon-button')[1].click();
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('app-bus-line-map iframe')).not.toBeNull();
+    expect(fixture.nativeElement.querySelector('app-bus-stop-list')).toBeNull();
+  });
+
+  it('shows the map of the other direction after changing direction', () => {
+    openBusLine(suburbanBusLine.number);
+    fixture.nativeElement.querySelectorAll('.icon-button')[1].click();
+    fixture.detectChanges();
+    getChangeDirectionButton()?.click();
+    fixture.detectChanges();
+    const frame: HTMLIFrameElement = fixture.nativeElement.querySelector('app-bus-line-map iframe');
+    expect(frame.getAttribute('src')).toBe(GOOGLE_MY_MAPS_EMBED_URL + suburbanBusLine.directions[1].mapId);
   });
 });

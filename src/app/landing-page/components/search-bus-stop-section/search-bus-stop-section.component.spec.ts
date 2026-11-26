@@ -88,12 +88,12 @@ describe('SearchBusStopSectionComponent', () => {
 
   it('matches without diacritics', () => {
     type('cirila');
-    expect(getResults()).toEqual(['Ćirila i Metodija 1 - d | Stara Pazova']);
+    expect(getResults()).toEqual(['Ćirila i Metodija 1 | Stara Pazova']);
   });
 
   it('finds a bus stop typed with Serbian letters', () => {
     type('Ćirila');
-    expect(getResults()).toEqual(['Ćirila i Metodija 1 - d | Stara Pazova']);
+    expect(getResults()).toEqual(['Ćirila i Metodija 1 | Stara Pazova']);
   });
 
   it('says so when nothing matches', () => {

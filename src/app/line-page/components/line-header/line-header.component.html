@@ -6,17 +6,30 @@
     <div class="page-header__info">
         <div class="page-header__title">
             <h5>{{ busLinePageName() }}</h5>
-            @if (busLine().directions.length > 1) {
-                <button
-                    class="icon-button"
-                    type="button"
-                    [attr.aria-label]="changeDirectionLabel()"
-                    (click)="directionChange.emit()"
-                >
-                    <img [src]="iconPath.DirectionChange" alt="">
-                    <span class="tooltip" aria-hidden="true">{{ changeDirectionLabel() }}</span>
-                </button>
-            }
+            <div class="page-header__actions">
+                @if (busLine().directions.length > 1) {
+                    <button
+                        class="icon-button"
+                        type="button"
+                        [attr.aria-label]="changeDirectionLabel()"
+                        (click)="directionChange.emit()"
+                    >
+                        <img [src]="iconPath.DirectionChange" alt="">
+                        <span class="tooltip" aria-hidden="true">{{ changeDirectionLabel() }}</span>
+                    </button>
+                }
+                @if (hasMap()) {
+                    <button
+                        class="icon-button"
+                        type="button"
+                        [attr.aria-label]="mapButtonLabel()"
+                        (click)="mapVisibilityChange.emit()"
+                    >
+                        <img [src]="mapButtonIconPath()" alt="">
+                        <span class="tooltip" aria-hidden="true">{{ mapButtonLabel() }}</span>
+                    </button>
+                }
+            </div>
         </div>
 
         <div class="page-header__details">

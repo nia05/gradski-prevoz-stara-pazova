@@ -20,7 +20,9 @@ export class BusLinesService {
   private readonly uniqueBusStops = computed(() => {
     const allDirections = this.lines().flatMap(line => line.directions);
     const allBusStops = allDirections.flatMap(direction => direction.busStops);
-    return allBusStops.filter((busStop, index) => allBusStops.findIndex(otherBusStop => otherBusStop.id === busStop.id) === index);
+    return allBusStops.filter((busStop, index) => allBusStops.findIndex(otherBusStop =>
+      otherBusStop.town === busStop.town && otherBusStop.name === busStop.name
+    ) === index);
   });
 
   findBusLineWithBusStop(busStopId: string): Line | undefined {

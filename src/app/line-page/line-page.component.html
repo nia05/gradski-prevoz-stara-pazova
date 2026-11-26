@@ -6,12 +6,18 @@
         [isReturnDirection]="isReturnDirection()"
         [skippedBusStopNames]="getSkippedBusStopNames(direction)"
         [routeChangeNewsId]="direction.routeChangeNewsId"
+        [isMapVisible]="isMapVisible()"
         (directionChange)="changeDirection()"
+        (mapVisibilityChange)="changeMapVisibility()"
     />
 
-    <app-bus-stop-list
-        [busLineNumber]="busLine.number"
-        [busStops]="direction.busStops"
-        [skippedBusStopIds]="direction.skippedBusStopIds"
-    />
+    @if (isMapVisible() && direction.mapId) {
+        <app-bus-line-map [mapId]="direction.mapId" [busLinePageName]="getBusLinePageName(busLine.number)" />
+    } @else {
+        <app-bus-stop-list
+            [busLineNumber]="busLine.number"
+            [busStops]="direction.busStops"
+            [skippedBusStopIds]="direction.skippedBusStopIds"
+        />
+    }
 }

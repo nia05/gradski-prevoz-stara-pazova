@@ -2,8 +2,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 
 import { LineHeaderComponent } from './line-header.component';
-import { createSuburbanBusLine } from '../../../core/bus-lines/bus-lines.generator';
+import { createDirection, createSuburbanBusLine } from '../../../core/bus-lines/bus-lines.generator';
+import { DirectionCode } from '../../../core/bus-lines/bus-lines.model';
 import { getBusLinePageName } from '../../../app.routes.page-names';
+import { IconPath } from '../../../shared/icon-path.model';
 
 describe('LineHeaderComponent', () => {
   let component: LineHeaderComponent;
@@ -24,6 +26,7 @@ describe('LineHeaderComponent', () => {
     fixture.componentRef.setInput('isReturnDirection', false);
     fixture.componentRef.setInput('skippedBusStopNames', []);
     fixture.componentRef.setInput('routeChangeNewsId', null);
+    fixture.componentRef.setInput('isMapVisible', false);
     fixture.detectChanges();
   });
 
@@ -56,7 +59,7 @@ describe('LineHeaderComponent', () => {
 
   it('names the last bus stop of the other direction in the change direction tooltip', () => {
     const tooltip: HTMLElement = fixture.nativeElement.querySelector('.tooltip');
-    expect(tooltip.textContent).toBe('Promeni smer ka Ćirila i Metodija 1 - d');
+    expect(tooltip.textContent).toBe('Promeni smer ka Ćirila i Metodija 1');
     fixture.componentRef.setInput('isReturnDirection', true);
     fixture.detectChanges();
     expect(tooltip.textContent).toBe('Promeni smer ka Centar');
@@ -67,5 +70,26 @@ describe('LineHeaderComponent', () => {
     fixture.componentRef.setInput('skippedBusStopNames', ['Centar']);
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('app-bus-stop-warning')).not.toBeNull();
+  });
+
+  function getMapButton(): HTMLButtonElement {
+    return fixture.nativeElement.querySelectorAll('.icon-button')[1];
+  }
+
+  it('offers the map of a bus line that has one and switches its icon to the list while the map is open', () => {
+    spyOn(component.mapVisibilityChange, 'emit');
+    expect(getMapButton().querySelector('img')?.getAttribute('src')).toBe(IconPath.Map);
+    getMapButton().click();
+    expect(component.mapVisibilityChange.emit).toHaveBeenCalled();
+
+    fixture.componentRef.setInput('isMapVisible', true);
+    fixture.detectChanges();
+    expect(getMapButton().querySelector('img')?.getAttribute('src')).toBe(IconPath.List);
+  });
+
+  it('has no map button when the shown direction has no map', () => {
+    fixture.componentRef.setInput('busLine', createSuburbanBusLine({ directions: [createDirection(), createDirection({ code: DirectionCode.B })] }));
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelectorAll('.icon-button').length).toBe(1);
   });
 });

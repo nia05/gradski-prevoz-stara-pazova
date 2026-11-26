@@ -29,6 +29,7 @@ export function createDirection(direction: Partial<Direction> = {}): Direction {
       to: 'Nova Pazova – Centar',
       skippedBusStopIds: [],
       routeChangeNewsId: null,
+      mapId: null,
       busStops: [createBusStop()],
       timetable: createTimetable(),
     },
@@ -38,7 +39,7 @@ export function createDirection(direction: Partial<Direction> = {}): Direction {
 
 export function createSuburbanBusLine(line: Partial<Line> = {}): Line {
   const novaPazovaCentar = createBusStop({ id: 'nova-pazova-centar', town: 'Nova Pazova', name: 'Centar', km: 7.07 });
-  const cirilaIMetodija = createBusStop({ id: 'stara-pazova-cirila-i-metodija-1-d', town: 'Stara Pazova', name: 'Ćirila i Metodija 1 - d', km: 9.3 });
+  const cirilaIMetodija = createBusStop({ id: 'stara-pazova-cirila-i-metodija-1-d', town: 'Stara Pazova', name: 'Ćirila i Metodija 1', km: 9.3 });
 
   return Object.assign(
     {
@@ -48,8 +49,8 @@ export function createSuburbanBusLine(line: Partial<Line> = {}): Line {
       validFrom: '2026-10-05',
       registerNumber: 1,
       directions: [
-        createDirection({ code: DirectionCode.A, busStops: [createBusStop(), novaPazovaCentar] }),
-        createDirection({ code: DirectionCode.B, busStops: [novaPazovaCentar, cirilaIMetodija] }),
+        createDirection({ code: DirectionCode.A, busStops: [createBusStop(), novaPazovaCentar], mapId: '16ZCxq1DVdhYmXJiUe8Gms4_FKBi4wfs' }),
+        createDirection({ code: DirectionCode.B, busStops: [novaPazovaCentar, cirilaIMetodija], mapId: '104nj86S2TYdsofhvHNLaZg5MZcemMII' }),
       ],
     },
     line
