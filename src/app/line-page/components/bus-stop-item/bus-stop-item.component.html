@@ -1,17 +1,16 @@
-<ng-template #busStopText>
-    <div class="bus-stop-item__text">
-        <span class="bus-stop-item__name">{{ busStopName() }}</span>
-        <span class="bus-stop-item__town">{{ busStopTown() }}</span>
-    </div>
-</ng-template>
-
 @if (isSkipped()) {
     <div class="bus-stop-item bus-stop-item--skipped">
-        <ng-container [ngTemplateOutlet]="busStopText" />
+        <div class="bus-stop-item__text">
+            <span class="bus-stop-item__name">{{ busStopName() }}</span>
+            <span class="bus-stop-item__town">{{ busStopTown() }}</span>
+        </div>
     </div>
 } @else {
     <a class="bus-stop-item" [routerLink]="['/', busLinePath, busLineNumber(), busStopId()]">
-        <ng-container [ngTemplateOutlet]="busStopText" />
+        <div class="bus-stop-item__text">
+            <span class="bus-stop-item__name">{{ busStopName() }}</span>
+            <span class="bus-stop-item__town">{{ busStopTown() }}</span>
+        </div>
         <img src="icons/arrow-next.svg" alt="">
     </a>
 }
