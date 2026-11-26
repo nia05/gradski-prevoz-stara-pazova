@@ -10,7 +10,8 @@ import { BusStopWarningComponent } from '../bus-stop-warning/bus-stop-warning.co
 @Component({
   selector: 'app-line-header',
   imports: [BreadcrumbComponent, BusStopWarningComponent],
-  templateUrl: './line-header.component.html'
+  templateUrl: './line-header.component.html',
+  styleUrl: './line-header.component.scss'
 })
 export class LineHeaderComponent {
   readonly busLine = input.required<Line>();
