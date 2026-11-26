@@ -2,11 +2,13 @@
 
 :root {
     --page-padding-inline: 1rem;
+    --toolbar-height: 3.25rem;
     @media (min-width: breakpoints.$tablet) {
         --page-padding-inline: 5rem;
     }
     @media (min-width: breakpoints.$desktop) {
         --page-padding-inline: 7.5rem;
+        --toolbar-height: 3.75rem;
     }
 }
 
@@ -14,5 +16,8 @@
     padding: 2rem var(--page-padding-inline);
     @media (min-width: breakpoints.$tablet) {
         padding-block: 3rem;
+    }
+    @media (min-width: breakpoints.$desktop) {
+        padding-block: 2.5rem;
     }
 }

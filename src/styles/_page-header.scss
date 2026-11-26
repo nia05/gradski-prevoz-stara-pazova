@@ -1,6 +1,9 @@
 @use './breakpoints';
 
 .page-header {
+    position: sticky;
+    top: var(--toolbar-height);
+    z-index: 1;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
