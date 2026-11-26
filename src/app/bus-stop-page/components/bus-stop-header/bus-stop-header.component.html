@@ -1,0 +1,57 @@
+@let busStops = firstDirectionBusStops();
+
+<section class="page-header">
+    <app-breadcrumb [parentPages]="breadcrumbParentPages()" [currentPageLabel]="busStop().name" />
+
+    <div class="page-header__info">
+        <div class="page-header__title">
+            <h5>{{ busStop().name }}</h5>
+            @if (canChangeDirection()) {
+                <button
+                    class="icon-button"
+                    type="button"
+                    [attr.aria-label]="changeDirectionLabel()"
+                    (click)="directionChange.emit()"
+                >
+                    <img src="icons/direction-change.svg" alt="">
+                    <span class="tooltip" aria-hidden="true">{{ changeDirectionLabel() }}</span>
+                </button>
+            }
+        </div>
+
+        <div class="page-header__details">
+            <div class="page-header__detail">
+                <span class="page-header__label">Naselje</span>
+                <span class="page-header__value">{{ busStop().town }}</span>
+            </div>
+            <div class="page-header__detail">
+                <span class="page-header__label">Smer</span>
+                <span class="page-header__value">
+                    {{ busStops[0].name }}
+                    <img
+                        class="page-header__arrow"
+                        [class.page-header__arrow--left]="isReturnDirection()"
+                        src="icons/direction-arrow.svg"
+                        alt=""
+                    >
+                    {{ busStops[busStops.length - 1].name }}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-tabs" role="tablist">
+        @for (dayTab of dayTabs; track dayTab.day) {
+            <button
+                class="day-tabs__tab"
+                [class.day-tabs__tab--selected]="dayTab.day === selectedDay()"
+                type="button"
+                role="tab"
+                [attr.aria-selected]="dayTab.day === selectedDay()"
+                (click)="dayChange.emit(dayTab.day)"
+            >
+                {{ dayTab.label }}
+            </button>
+        }
+    </div>
+</section>
