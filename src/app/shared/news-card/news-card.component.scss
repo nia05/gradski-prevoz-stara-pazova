@@ -1,10 +1,19 @@
+@use '../../../styles/breakpoints';
+
 .news-card {
     display: flex;
     flex-direction: column;
+    height: 100%;
     overflow: hidden;
     border-radius: 0.75rem;
-    background-color: var(--color-white);
+    background-color: var(--color-dark-blue-8);
     box-shadow: var(--shadow-card);
+    text-decoration: none;
+    transition: background-color ease-in-out 0.3s;
+
+    &:hover {
+        background-color: var(--color-dark-blue-20);
+    }
 
     &__image {
         width: 100%;
@@ -22,7 +31,14 @@
         -webkit-line-clamp: 2;
         line-clamp: 2;
         overflow: hidden;
+        font-weight: var(--font-weight-semibold);
         color: var(--color-dark-blue);
+        @media (min-width: breakpoints.$desktop) {
+            font-family: var(--text-h6-family);
+            font-weight: var(--text-h6-weight);
+            font-size: var(--text-h6-size);
+            letter-spacing: var(--text-h6-tracking);
+        }
     }
 
     &__date {
@@ -31,5 +47,6 @@
         align-items: center;
         gap: 0.25rem;
         margin-bottom: 0.25rem;
+        color: var(--color-grey);
     }
 }

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { NewsCardComponent } from './news-card.component';
 import { createNews } from '../../core/news/news.generator';
@@ -11,12 +12,14 @@ describe('NewsCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NewsCardComponent]
+      imports: [NewsCardComponent],
+      providers: [provideRouter([])],
     })
     .compileComponents();
 
     fixture = TestBed.createComponent(NewsCardComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('newsId', news.id);
     fixture.componentRef.setInput('newsImage', news.image);
     fixture.componentRef.setInput('newsTitle', news.title);
     fixture.componentRef.setInput('newsDate', news.date);
