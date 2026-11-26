@@ -22,6 +22,7 @@ describe('BusStopListComponent', () => {
     component = fixture.componentInstance;
     fixture.componentRef.setInput('busLineNumber', busLine.number);
     fixture.componentRef.setInput('busStops', busStops);
+    fixture.componentRef.setInput('skippedBusStopIds', [busStops[1].id]);
     fixture.detectChanges();
   });
 
@@ -33,5 +34,11 @@ describe('BusStopListComponent', () => {
     const names = Array.from<HTMLElement>(fixture.nativeElement.querySelectorAll('.bus-stop-item__name'))
       .map(name => name.textContent);
     expect(names).toEqual(busStops.map(busStop => busStop.name));
+  });
+
+  it('greys out the skipped bus stops', () => {
+    const skippedNames = Array.from<HTMLElement>(fixture.nativeElement.querySelectorAll('.bus-stop-item--skipped .bus-stop-item__name'))
+      .map(name => name.textContent);
+    expect(skippedNames).toEqual([busStops[1].name]);
   });
 });

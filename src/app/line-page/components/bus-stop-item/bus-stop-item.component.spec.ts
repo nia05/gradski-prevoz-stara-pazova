@@ -25,6 +25,7 @@ describe('BusStopItemComponent', () => {
     fixture.componentRef.setInput('busStopId', busStop.id);
     fixture.componentRef.setInput('busStopName', busStop.name);
     fixture.componentRef.setInput('busStopTown', busStop.town);
+    fixture.componentRef.setInput('isSkipped', false);
     fixture.detectChanges();
   });
 
@@ -37,5 +38,13 @@ describe('BusStopItemComponent', () => {
     expect(link.querySelector('.bus-stop-item__name')?.textContent).toBe(busStop.name);
     expect(link.querySelector('.bus-stop-item__town')?.textContent).toBe(busStop.town);
     expect(link.getAttribute('href')).toBe(`/${BUS_LINE_PATH}/${busLine.number}/${busStop.id}`);
+  });
+
+  it('shows a skipped bus stop greyed out and without a link', () => {
+    fixture.componentRef.setInput('isSkipped', true);
+    fixture.detectChanges();
+    const item: HTMLElement = fixture.nativeElement;
+    expect(item.querySelector('a')).toBeNull();
+    expect(item.querySelector('.bus-stop-item--skipped .bus-stop-item__name')?.textContent).toBe(busStop.name);
   });
 });

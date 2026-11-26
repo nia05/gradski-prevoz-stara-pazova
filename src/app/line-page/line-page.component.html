@@ -1,14 +1,17 @@
 @if (busLine(); as busLine) {
-    @let busStops = isReturnDirection() ? busLine.directions[1].busStops : busLine.directions[0].busStops;
+    @let direction = isReturnDirection() ? busLine.directions[1] : busLine.directions[0];
 
     <app-line-header
         [busLine]="busLine"
         [isReturnDirection]="isReturnDirection()"
+        [skippedBusStopNames]="getSkippedBusStopNames(direction)"
+        [routeChangeNewsId]="direction.routeChangeNewsId"
         (directionChange)="changeDirection()"
     />
 
     <app-bus-stop-list
         [busLineNumber]="busLine.number"
-        [busStops]="busStops"
+        [busStops]="direction.busStops"
+        [skippedBusStopIds]="direction.skippedBusStopIds"
     />
 }

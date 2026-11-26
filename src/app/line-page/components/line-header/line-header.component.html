@@ -38,5 +38,12 @@
                 </span>
             </div>
         </div>
+
+        @if (skippedBusStopNames().length > 0) {
+            <app-bus-stop-warning
+                [skippedBusStopNames]="skippedBusStopNames()"
+                [routeChangeNewsId]="routeChangeNewsId()"
+            />
+        }
     </div>
 </section>

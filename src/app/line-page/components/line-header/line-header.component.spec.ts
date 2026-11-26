@@ -21,6 +21,8 @@ describe('LineHeaderComponent', () => {
     component = fixture.componentInstance;
     fixture.componentRef.setInput('busLine', busLine);
     fixture.componentRef.setInput('isReturnDirection', false);
+    fixture.componentRef.setInput('skippedBusStopNames', []);
+    fixture.componentRef.setInput('routeChangeNewsId', null);
     fixture.detectChanges();
   });
 
@@ -57,5 +59,12 @@ describe('LineHeaderComponent', () => {
     fixture.componentRef.setInput('isReturnDirection', true);
     fixture.detectChanges();
     expect(tooltip.textContent).toBe('Promeni smer ka Centar');
+  });
+
+  it('shows the bus stop warning only when the bus skips bus stops', () => {
+    expect(fixture.nativeElement.querySelector('app-bus-stop-warning')).toBeNull();
+    fixture.componentRef.setInput('skippedBusStopNames', ['Centar']);
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('app-bus-stop-warning')).not.toBeNull();
   });
 });

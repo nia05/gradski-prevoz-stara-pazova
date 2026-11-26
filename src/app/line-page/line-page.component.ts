@@ -1,6 +1,7 @@
 import { Component, computed, inject, input, signal } from '@angular/core';
 
 import { BusLinesService } from '../core/bus-lines/bus-lines.service';
+import { Direction } from '../core/bus-lines/bus-lines.model';
 import { LineHeaderComponent } from './components/line-header/line-header.component';
 import { BusStopListComponent } from './components/bus-stop-list/bus-stop-list.component';
 
@@ -20,6 +21,11 @@ export class LinePageComponent {
   protected readonly busLine = computed(
     () => this.busLines.lines().find(busLine => busLine.number === Number(this.busLineNumber()))
   );
+
+  protected getSkippedBusStopNames(direction: Direction): string[] {
+    const skippedBusStops = direction.busStops.filter(busStop => direction.skippedBusStopIds.includes(busStop.id));
+    return [...new Set(skippedBusStops.map(busStop => busStop.name))];
+  }
 
   protected changeDirection(): void {
     this.isReturnDirection.update(isReturnDirection => !isReturnDirection);

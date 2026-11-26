@@ -11,6 +11,8 @@
           "code": "A",
           "from": "Stara Pazova – Stara Pazova AS",
           "to": "Nova Pazova – Aerodrom glavni ulaz - okretnica",
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
@@ -724,6 +726,8 @@
           "code": "B",
           "from": "Nova Pazova – Aerodrom glavni ulaz - okretnica",
           "to": "Stara Pazova – Stara Pazova AS",
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "nova-pazova-aerodrom-glavni-ulaz-okretnica",
@@ -1446,6 +1450,8 @@
           "code": "A",
           "from": "Stara Pazova – Stara Pazova AS",
           "to": "Krnješevci – Industrijska zona - okretnica",
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
@@ -2248,6 +2254,8 @@
           "code": "B",
           "from": "Krnješevci – Industrijska zona - okretnica",
           "to": "Stara Pazova – Stara Pazova AS",
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "krnjesevci-industrijska-zona-okretnica",
@@ -3059,6 +3067,8 @@
           "code": "A",
           "from": "Stara Pazova – Stara Pazova AS",
           "to": "Golubinci – Putinačka 2.",
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
@@ -3524,6 +3534,8 @@
           "code": "B",
           "from": "Golubinci – Putinačka 2.",
           "to": "Stara Pazova – Stara Pazova AS",
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "golubinci-putinacka-2",
@@ -3998,6 +4010,8 @@
           "code": "A",
           "from": "Stara Pazova – Stara Pazova AS",
           "to": "Surduk – Okretnica",
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
@@ -4992,6 +5006,8 @@
           "code": "B",
           "from": "Surduk – Okretnica",
           "to": "Stara Pazova – Stara Pazova AS",
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "surduk-okretnica",
@@ -5910,6 +5926,8 @@
           "code": "A",
           "from": "Stara Pazova – Stara Pazova AS",
           "to": "Novi Banovci – Izlaz",
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
@@ -6615,6 +6633,8 @@
           "code": "B",
           "from": "Novi Banovci – Izlaz",
           "to": "Stara Pazova – Stara Pazova AS",
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "novi-banovci-izlaz",
@@ -7390,6 +7410,8 @@
           "code": "B",
           "from": "Stara Pazova AS",
           "to": "Železnička stanica St. Pazova",
+          "skippedBusStopIds": ["stara-pazova-jana-bota"],
+          "routeChangeNewsId": 2,
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
@@ -8634,6 +8656,8 @@
           "code": "B",
           "from": "Bazeni - d",
           "to": "Bazeni - d",
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "nova-pazova-bazeni-d",
@@ -9690,6 +9714,8 @@
           "code": "A",
           "from": "Surduk – Okretnica",
           "to": "Novi Banovci – Izlaz",
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "surduk-okretnica",
@@ -10488,6 +10514,8 @@
           "code": "B",
           "from": "Novi Banovci – Izlaz",
           "to": "Surduk – Okretnica",
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
           "busStops": [
             {
               "id": "novi-banovci-izlaz",

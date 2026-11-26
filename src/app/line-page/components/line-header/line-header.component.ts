@@ -2,16 +2,19 @@ import { Component, computed, input, output } from '@angular/core';
 
 import { Line } from '../../../core/bus-lines/bus-lines.model';
 import { BreadcrumbComponent } from '../../../shared/breadcrumb/breadcrumb.component';
+import { BusStopWarningComponent } from '../bus-stop-warning/bus-stop-warning.component';
 
 @Component({
   selector: 'app-line-header',
-  imports: [BreadcrumbComponent],
+  imports: [BreadcrumbComponent, BusStopWarningComponent],
   templateUrl: './line-header.component.html',
   styleUrl: './line-header.component.scss'
 })
 export class LineHeaderComponent {
   readonly busLine = input.required<Line>();
   readonly isReturnDirection = input.required<boolean>();
+  readonly skippedBusStopNames = input.required<string[]>();
+  readonly routeChangeNewsId = input.required<number | null>();
   readonly directionChange = output<void>();
 
   protected readonly firstDirectionBusStops = computed(() => this.busLine().directions[0].busStops);

@@ -13,6 +13,16 @@
         background-color: var(--color-grey-12);
     }
 
+    &--skipped,
+    &--skipped:hover {
+        background-color: var(--color-white);
+        border: 0.063rem solid var(--color-grey-12);
+    }
+
+    &--skipped &__name {
+        color: var(--color-grey);
+    }
+
     &__text {
         display: flex;
         flex-direction: column;

@@ -12,6 +12,7 @@ import { BusStopItemComponent } from '../bus-stop-item/bus-stop-item.component';
 export class BusStopListComponent {
   readonly busLineNumber = input.required<number>();
   readonly busStops = input.required<BusStop[]>();
+  readonly skippedBusStopIds = input.required<string[]>();
 
   protected readonly busStopColumns = computed(() => {
     const busStops = this.busStops();

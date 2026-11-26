@@ -14,12 +14,14 @@ function createTimetable(timetable: Partial<Timetable> = {}): Timetable {
   );
 }
 
-function createDirection(direction: Partial<Direction> = {}): Direction {
+export function createDirection(direction: Partial<Direction> = {}): Direction {
   return Object.assign(
     {
       code: DirectionCode.A,
       from: 'Stara Pazova – Stara Pazova AS',
       to: 'Nova Pazova – Centar',
+      skippedBusStopIds: [],
+      routeChangeNewsId: null,
       busStops: [createBusStop()],
       timetable: createTimetable(),
     },

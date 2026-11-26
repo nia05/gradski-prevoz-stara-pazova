@@ -25,6 +25,8 @@ export interface Direction {
   code: DirectionCode;
   from: string;
   to: string;
+  skippedBusStopIds: string[];
+  routeChangeNewsId: number | null;
   busStops: BusStop[];
   timetable: Timetable;
   note?: string;

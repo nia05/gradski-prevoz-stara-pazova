@@ -11,6 +11,7 @@
                             [busStopId]="busStop.id"
                             [busStopName]="busStop.name"
                             [busStopTown]="busStop.town"
+                            [isSkipped]="skippedBusStopIds().includes(busStop.id)"
                         />
                     </li>
                 }
