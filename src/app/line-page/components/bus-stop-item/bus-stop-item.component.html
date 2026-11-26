@@ -1,7 +1,7 @@
 <a class="bus-stop-item" [routerLink]="['/', busLinePath, busLineNumber(), busStopId()]">
-    <span class="bus-stop-item__name">{{ busStopName() }}</span>
-    @if (isTownVisible()) {
+    <div class="bus-stop-item__text">
+        <span class="bus-stop-item__name">{{ busStopName() }}</span>
         <span class="bus-stop-item__town">{{ busStopTown() }}</span>
-    }
-    <img class="bus-stop-item__arrow" src="icons/arrow-next.svg" alt="">
+    </div>
+    <img src="icons/arrow-next.svg" alt="">
 </a>

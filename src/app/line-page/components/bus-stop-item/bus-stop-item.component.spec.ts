@@ -25,13 +25,8 @@ describe('BusStopItemComponent', () => {
     fixture.componentRef.setInput('busStopId', busStop.id);
     fixture.componentRef.setInput('busStopName', busStop.name);
     fixture.componentRef.setInput('busStopTown', busStop.town);
-    fixture.componentRef.setInput('isTownVisible', true);
     fixture.detectChanges();
   });
-
-  function getTown(): HTMLElement | null {
-    return fixture.nativeElement.querySelector('.bus-stop-item__town');
-  }
 
   it('should create', () => {
     expect(component).toBeTruthy();
@@ -40,13 +35,7 @@ describe('BusStopItemComponent', () => {
   it('shows the bus stop name and town and links to the bus stop page of this bus line', () => {
     const link: HTMLAnchorElement = fixture.nativeElement.querySelector('a');
     expect(link.querySelector('.bus-stop-item__name')?.textContent).toBe(busStop.name);
-    expect(getTown()?.textContent).toBe(busStop.town);
+    expect(link.querySelector('.bus-stop-item__town')?.textContent).toBe(busStop.town);
     expect(link.getAttribute('href')).toBe(`/${BUS_LINE_PATH}/${busLine.number}/${busStop.id}`);
-  });
-
-  it('hides the town when it should not be visible', () => {
-    fixture.componentRef.setInput('isTownVisible', false);
-    fixture.detectChanges();
-    expect(getTown()).toBeNull();
   });
 });
