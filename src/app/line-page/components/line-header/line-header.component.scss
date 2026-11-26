@@ -5,7 +5,7 @@
     flex-direction: column;
     gap: 1.5rem;
     padding: 1.5rem var(--page-padding-inline) 1rem;
-    background-color: var(--color-white);
+    background-color: var(--color-grey-4);
     box-shadow: var(--shadow);
     @media (min-width: breakpoints.$tablet) {
         padding-bottom: 1.5rem;
