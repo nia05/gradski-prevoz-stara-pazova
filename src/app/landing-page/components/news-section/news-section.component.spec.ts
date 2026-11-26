@@ -6,6 +6,7 @@ import { HttpTestingController, provideHttpClientTesting } from '@angular/common
 import { NewsSectionComponent } from './news-section.component';
 import { createNews, createNewsResponse } from '../../../core/news/news.generator';
 import { NEWS_URL } from '../../../core/news/news.constants';
+import { NEWS_PATH } from '../../../app.routes.constants';
 
 describe('NewsSectionComponent', () => {
   let component: NewsSectionComponent;
@@ -37,5 +38,10 @@ describe('NewsSectionComponent', () => {
     const titles = Array.from<HTMLElement>(fixture.nativeElement.querySelectorAll('.news-card__title'))
       .map(title => title.textContent);
     expect(titles).toEqual([firstNews.title, secondNews.title]);
+  });
+
+  it('links to the page with all news', () => {
+    const allNewsLink: HTMLAnchorElement = fixture.nativeElement.querySelector('.news-section__heading a');
+    expect(allNewsLink.getAttribute('href')).toBe('/' + NEWS_PATH);
   });
 });

@@ -1,8 +1,11 @@
 <section class="news-section container">
-    <h5>Vesti</h5>
+    <div class="news-section__heading">
+        <h5>Vesti</h5>
+        <a class="btn btn--secondary" [routerLink]="['/', newsPath]">Pogledaj sve vesti</a>
+    </div>
 
     <ul class="news-section__list">
-        @for (newsItem of news(); track newsItem.id) {
+        @for (newsItem of latestNews(); track newsItem.id) {
             <li class="news-section__list-item">
                 <app-news-card
                     [newsId]="newsItem.id"
