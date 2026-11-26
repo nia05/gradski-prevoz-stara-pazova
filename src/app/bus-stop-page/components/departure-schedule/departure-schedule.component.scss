@@ -1,9 +1,9 @@
 @use '../../../../styles/breakpoints';
 
 .departure-schedule {
-    padding: 1rem var(--page-padding-inline) 3rem;
+    padding: 1rem var(--page-padding-inline);
     @media (min-width: breakpoints.$desktop) {
-        padding-top: 1.5rem;
+        padding-block: 1.5rem;
     }
 
     &__empty {
@@ -36,12 +36,15 @@
     }
 
     &__heading {
-        margin-bottom: 0.75rem;
+        margin-bottom: 1rem;
         font-family: var(--text-subtitle-1-family);
         font-weight: var(--font-weight-semibold);
         font-size: var(--text-subtitle-1-size);
         letter-spacing: var(--text-subtitle-1-tracking);
         color: var(--color-grey);
+        @media (min-width: breakpoints.$desktop) {
+            margin-bottom: 0.5rem;
+        }
 
         &--repeated {
             display: none;
