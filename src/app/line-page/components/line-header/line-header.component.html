@@ -1,10 +1,10 @@
 @let busStops = firstDirectionBusStops();
 
-<section class="line-header">
-    <app-breadcrumb currentPageLabel="Linija {{ busLine().number }}" />
+<section class="page-header line-header">
+    <app-breadcrumb [parentPages]="[]" currentPageLabel="Linija {{ busLine().number }}" />
 
-    <div class="line-header__info">
-        <div class="line-header__title">
+    <div class="page-header__info">
+        <div class="page-header__title">
             <h5>Linija {{ busLine().number }}</h5>
             @if (busLine().directions.length > 1) {
                 <button
@@ -19,18 +19,18 @@
             }
         </div>
 
-        <div class="line-header__details">
-            <div class="line-header__detail">
-                <span class="line-header__label">Naselje</span>
-                <span class="line-header__value">{{ towns() }}</span>
+        <div class="page-header__details">
+            <div class="page-header__detail">
+                <span class="page-header__label">Naselje</span>
+                <span class="page-header__value">{{ towns() }}</span>
             </div>
-            <div class="line-header__detail">
-                <span class="line-header__label">Smer</span>
-                <span class="line-header__value">
+            <div class="page-header__detail">
+                <span class="page-header__label">Smer</span>
+                <span class="page-header__value">
                     {{ busStops[0].name }}
                     <img
-                        class="line-header__arrow"
-                        [class.line-header__arrow--left]="isReturnDirection()"
+                        class="page-header__arrow"
+                        [class.page-header__arrow--left]="isReturnDirection()"
                         src="icons/direction-arrow.svg"
                         alt=""
                     >

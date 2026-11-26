@@ -27,7 +27,7 @@ describe('LineHeaderComponent', () => {
   });
 
   function getArrow(): HTMLImageElement {
-    return fixture.nativeElement.querySelector('.line-header__arrow');
+    return fixture.nativeElement.querySelector('.page-header__arrow');
   }
 
   it('should create', () => {
@@ -37,7 +37,7 @@ describe('LineHeaderComponent', () => {
   it('shows the bus line number and the towns of the bus line', () => {
     const header: HTMLElement = fixture.nativeElement;
     expect(header.querySelector('h5')?.textContent).toBe(`Linija ${busLine.number}`);
-    expect(header.querySelector('.line-header__value')?.textContent).toBe('Stara Pazova, Nova Pazova');
+    expect(header.querySelector('.page-header__value')?.textContent).toBe('Stara Pazova, Nova Pazova');
   });
 
   it('tells the parent to change direction when the button is clicked', () => {
@@ -47,10 +47,10 @@ describe('LineHeaderComponent', () => {
   });
 
   it('turns the arrow to the left for the return direction', () => {
-    expect(getArrow().classList).not.toContain('line-header__arrow--left');
+    expect(getArrow().classList).not.toContain('page-header__arrow--left');
     fixture.componentRef.setInput('isReturnDirection', true);
     fixture.detectChanges();
-    expect(getArrow().classList).toContain('line-header__arrow--left');
+    expect(getArrow().classList).toContain('page-header__arrow--left');
   });
 
   it('names the last bus stop of the other direction in the change direction tooltip', () => {
