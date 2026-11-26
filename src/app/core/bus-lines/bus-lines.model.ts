@@ -8,6 +8,12 @@ export enum DirectionCode {
   B = 'B',
 }
 
+export enum TimetableDay {
+  Weekday = 'weekday',
+  Saturday = 'saturday',
+  Sunday = 'sunday',
+}
+
 export interface BusLinesResponse {
   lines: Line[];
 }
@@ -46,6 +52,6 @@ export interface Timetable {
 }
 
 export interface Departure {
-  number: number; 
+  number: number;
   times: (string | null)[];
 }

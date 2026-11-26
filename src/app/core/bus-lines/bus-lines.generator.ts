@@ -1,6 +1,6 @@
 import { BusLinesResponse, BusLineType, BusStop, Departure, Direction, DirectionCode, Line, Timetable } from './bus-lines.model';
 
-function createBusStop(busStop: Partial<BusStop> = {}): BusStop {
+export function createBusStop(busStop: Partial<BusStop> = {}): BusStop {
   return Object.assign(
     { id: 'stara-pazova-stara-pazova-as', town: 'Stara Pazova', name: 'Stara Pazova AS', km: 0 },
     busStop
