@@ -1,0 +1,49 @@
+@use '../../../../styles/breakpoints';
+
+.bus-stop-warning {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border: 0.0625rem solid var(--color-pink-20);
+    border-radius: 0.25rem;
+    background-color: var(--color-pink-8);
+    @media (min-width: breakpoints.$tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__message {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__text {
+        font-family: var(--text-body-2-family);
+        font-size: var(--text-body-2-size);
+        letter-spacing: var(--text-body-2-tracking);
+        color: var(--color-grey);
+
+        strong {
+            font-weight: var(--font-weight-semibold);
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-self: flex-end;
+        align-items: center;
+        font-family: var(--text-button-family);
+        font-weight: var(--text-button-weight);
+        font-size: var(--text-button-size);
+        letter-spacing: var(--text-button-tracking);
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--color-grey);
+        @media (min-width: breakpoints.$tablet) {
+            align-self: center;
+        }
+    }
+}

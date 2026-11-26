@@ -1,0 +1,15 @@
+<div class="bus-stop-warning">
+    <div class="bus-stop-warning__message">
+        <img src="icons/warning.svg" alt="">
+        <p class="bus-stop-warning__text">
+            Autobus ne staje na {{ busStopWord() }} <strong>{{ skippedBusStopNames().join(', ') }}</strong>.
+        </p>
+    </div>
+
+    @if (routeChangeNewsId() !== null) {
+        <a class="bus-stop-warning__link" [routerLink]="['/', newsPath, routeChangeNewsId()]">
+            Pogledaj vest
+            <img src="icons/arrow-next-pink.svg" alt="">
+        </a>
+    }
+</div>
