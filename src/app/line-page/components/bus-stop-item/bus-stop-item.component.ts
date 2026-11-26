@@ -14,7 +14,6 @@ export class BusStopItemComponent {
   readonly busStopId = input.required<string>();
   readonly busStopName = input.required<string>();
   readonly busStopTown = input.required<string>();
-  readonly isTownVisible = input.required<boolean>();
 
   protected readonly busLinePath = BUS_LINE_PATH;
 }

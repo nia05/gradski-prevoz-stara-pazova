@@ -22,7 +22,6 @@ describe('BusStopListComponent', () => {
     component = fixture.componentInstance;
     fixture.componentRef.setInput('busLineNumber', busLine.number);
     fixture.componentRef.setInput('busStops', busStops);
-    fixture.componentRef.setInput('isTownVisible', true);
     fixture.detectChanges();
   });
 

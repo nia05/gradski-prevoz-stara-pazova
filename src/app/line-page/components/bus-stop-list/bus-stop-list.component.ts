@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 
 import { BusStop } from '../../../core/bus-lines/bus-lines.model';
 import { BusStopItemComponent } from '../bus-stop-item/bus-stop-item.component';
@@ -12,5 +12,10 @@ import { BusStopItemComponent } from '../bus-stop-item/bus-stop-item.component';
 export class BusStopListComponent {
   readonly busLineNumber = input.required<number>();
   readonly busStops = input.required<BusStop[]>();
-  readonly isTownVisible = input.required<boolean>();
+
+  protected readonly busStopColumns = computed(() => {
+    const busStops = this.busStops();
+    const middleIndex = Math.ceil(busStops.length / 2);
+    return [busStops.slice(0, middleIndex), busStops.slice(middleIndex)];
+  });
 }

@@ -1,17 +1,20 @@
 <section class="bus-stop-list">
-    <p class="bus-stop-list__tab">Lista stajališta</p>
+    <h2 class="bus-stop-list__title">Lista stajališta</h2>
 
-    <ul class="bus-stop-list__items">
-        @for (busStop of busStops(); track $index) {
-            <li>
-                <app-bus-stop-item
-                    [busLineNumber]="busLineNumber()"
-                    [busStopId]="busStop.id"
-                    [busStopName]="busStop.name"
-                    [busStopTown]="busStop.town"
-                    [isTownVisible]="isTownVisible()"
-                />
-            </li>
+    <div class="bus-stop-list__columns">
+        @for (busStopColumn of busStopColumns(); track $index) {
+            <ul class="bus-stop-list__items">
+                @for (busStop of busStopColumn; track $index) {
+                    <li>
+                        <app-bus-stop-item
+                            [busLineNumber]="busLineNumber()"
+                            [busStopId]="busStop.id"
+                            [busStopName]="busStop.name"
+                            [busStopTown]="busStop.town"
+                        />
+                    </li>
+                }
+            </ul>
         }
-    </ul>
+    </div>
 </section>
