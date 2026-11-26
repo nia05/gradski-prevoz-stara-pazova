@@ -4,10 +4,11 @@
     <ul class="news-section__list">
         @for (newsItem of news(); track newsItem.id) {
             <li class="news-section__list-item">
-                <app-news-card 
-                    [newsImage]="newsItem.image" 
-                    [newsTitle]="newsItem.title" 
-                    [newsDate]="newsItem.date" 
+                <app-news-card
+                    [newsId]="newsItem.id"
+                    [newsImage]="newsItem.image"
+                    [newsTitle]="newsItem.title"
+                    [newsDate]="newsItem.date"
                 />
             </li>
         }
