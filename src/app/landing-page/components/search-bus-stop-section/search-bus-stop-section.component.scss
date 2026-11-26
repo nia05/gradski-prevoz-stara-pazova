@@ -4,19 +4,42 @@
 
 .search-bus-stop {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    justify-content: center;
     background-color: var(--color-dark-blue-4);
-
     @media (min-width: breakpoints.$tablet) {
-        padding: 3rem 18.75rem;
+        padding: 1rem var(--page-padding-inline);
+        background-color: var(--color-grey-4);
     }
-    
+    @media (min-width: breakpoints.$desktop) {
+        padding-block: 2rem;
+    }
 
-    &__content {
+    &__box {
         display: flex;
+        flex: 1;
         flex-direction: column;
-        flex: 0 1 26.5rem;
         gap: 1rem;
+        padding: 3rem 1rem;
+        background-color: var(--color-dark-blue-4);
+        @media (min-width: breakpoints.$tablet) {
+            flex: 0 1 25.75rem;
+        }
+        @media (min-width: breakpoints.$desktop) {
+            flex: 0 0 auto;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    .search {
+        @media (min-width: breakpoints.$desktop) {
+            flex: 0 0 22.5rem;
+        }
+    }
+
+    &__button {
+        @media (min-width: breakpoints.$desktop) {
+            flex: 0 0 15.5rem;
+        }
     }
 }
