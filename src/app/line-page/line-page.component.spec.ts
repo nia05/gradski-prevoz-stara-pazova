@@ -66,14 +66,4 @@ describe('LinePageComponent', () => {
     openBusLine(urbanBusLine.number);
     expect(getChangeDirectionButton()).toBeNull();
   });
-
-  it('shows the town next to each bus stop on a suburban bus line', () => {
-    openBusLine(suburbanBusLine.number);
-    expect(fixture.nativeElement.querySelectorAll('.bus-stop-item__town').length).toBe(2);
-  });
-
-  it('does not show the town next to bus stops on an urban bus line', () => {
-    openBusLine(urbanBusLine.number);
-    expect(fixture.nativeElement.querySelectorAll('.bus-stop-item__town').length).toBe(0);
-  });
 });

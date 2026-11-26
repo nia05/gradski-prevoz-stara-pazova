@@ -1,7 +1,6 @@
 import { Component, computed, inject, input, signal } from '@angular/core';
 
 import { BusLinesService } from '../core/bus-lines/bus-lines.service';
-import { BusLineType } from '../core/bus-lines/bus-lines.model';
 import { LineHeaderComponent } from './components/line-header/line-header.component';
 import { BusStopListComponent } from './components/bus-stop-list/bus-stop-list.component';
 
@@ -16,7 +15,6 @@ export class LinePageComponent {
 
   readonly busLineNumber = input.required<string>();
 
-  protected readonly busLineType = BusLineType;
   protected readonly isReturnDirection = signal(false);
 
   protected readonly busLine = computed(
