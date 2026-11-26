@@ -79,9 +79,14 @@
     border-radius: 0.25rem;
     background-color: var(--color-yellow);
     cursor: pointer;
+    transition: background-color ease-in-out 0.2s;
     @media (min-width: breakpoints.$tablet) {
         width: 2.75rem;
         height: 2.75rem;
+    }
+
+    &:hover {
+        background-color: var(--color-dark-yellow);
     }
 
     &:hover .tooltip,
