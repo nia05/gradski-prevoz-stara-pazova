@@ -50,4 +50,12 @@ describe('LineHeaderComponent', () => {
     fixture.detectChanges();
     expect(getArrow().classList).toContain('line-header__arrow--left');
   });
+
+  it('names the last bus stop of the other direction in the change direction tooltip', () => {
+    const tooltip: HTMLElement = fixture.nativeElement.querySelector('.tooltip');
+    expect(tooltip.textContent).toBe('Promeni smer ka Ćirila i Metodija 1 - d');
+    fixture.componentRef.setInput('isReturnDirection', true);
+    fixture.detectChanges();
+    expect(tooltip.textContent).toBe('Promeni smer ka Centar');
+  });
 });

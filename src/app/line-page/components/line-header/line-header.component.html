@@ -1,19 +1,20 @@
 @let busStops = firstDirectionBusStops();
 
 <section class="line-header">
-    <nav aria-label="Putanja">
-        <ol class="breadcrumb">
-            <li><a class="breadcrumb__link" [routerLink]="['/', homePath]">Početna</a></li>
-            <li class="breadcrumb__current" aria-current="page">Linija {{ busLine().number }}</li>
-        </ol>
-    </nav>
+    <app-breadcrumb currentPageLabel="Linija {{ busLine().number }}" />
 
     <div class="line-header__info">
         <div class="line-header__title">
             <h5>Linija {{ busLine().number }}</h5>
             @if (busLine().directions.length > 1) {
-                <button class="icon-button" type="button" aria-label="Promeni smer" (click)="directionChange.emit()">
+                <button
+                    class="icon-button"
+                    type="button"
+                    [attr.aria-label]="changeDirectionLabel()"
+                    (click)="directionChange.emit()"
+                >
                     <img src="icons/direction-change.svg" alt="">
+                    <span class="tooltip" aria-hidden="true">{{ changeDirectionLabel() }}</span>
                 </button>
             }
         </div>

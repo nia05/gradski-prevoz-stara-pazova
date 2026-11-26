@@ -1,12 +1,11 @@
 import { Component, computed, input, output } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 import { Line } from '../../../core/bus-lines/bus-lines.model';
-import { HOME_PATH } from '../../../app.routes.constants';
+import { BreadcrumbComponent } from '../../../shared/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-line-header',
-  imports: [RouterLink],
+  imports: [BreadcrumbComponent],
   templateUrl: './line-header.component.html',
   styleUrl: './line-header.component.scss'
 })
@@ -15,12 +14,17 @@ export class LineHeaderComponent {
   readonly isReturnDirection = input.required<boolean>();
   readonly directionChange = output<void>();
 
-  protected readonly homePath = HOME_PATH;
-
   protected readonly firstDirectionBusStops = computed(() => this.busLine().directions[0].busStops);
 
   protected readonly towns = computed(() => {
     const allTowns = this.firstDirectionBusStops().map(busStop => busStop.town);
     return [...new Set(allTowns)].join(', ');
+  });
+
+  protected readonly changeDirectionLabel = computed(() => {
+    const directions = this.busLine().directions;
+    const otherDirection = this.isReturnDirection() ? directions[0] : directions[1];
+    const lastBusStop = otherDirection.busStops[otherDirection.busStops.length - 1];
+    return `Promeni smer ka ${lastBusStop.name}`;
   });
 }
