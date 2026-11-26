@@ -1,4 +1,4 @@
-import { BusLinesResponse, BusLineType, BusStop, Direction, DirectionCode, Line, Timetable } from './bus-lines.model';
+import { BusLinesResponse, BusLineType, BusStop, Departure, Direction, DirectionCode, Line, Timetable } from './bus-lines.model';
 
 function createBusStop(busStop: Partial<BusStop> = {}): BusStop {
   return Object.assign(
@@ -7,7 +7,14 @@ function createBusStop(busStop: Partial<BusStop> = {}): BusStop {
   );
 }
 
-function createTimetable(timetable: Partial<Timetable> = {}): Timetable {
+export function createDeparture(departure: Partial<Departure> = {}): Departure {
+  return Object.assign(
+    { number: 1, times: ['05:00'] },
+    departure
+  );
+}
+
+export function createTimetable(timetable: Partial<Timetable> = {}): Timetable {
   return Object.assign(
     { weekday: [], saturday: [], sunday: [] },
     timetable
