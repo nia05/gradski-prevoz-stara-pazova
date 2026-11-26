@@ -1,1 +1,37 @@
-<p>Vest {{ newsId() }}</p>
+@if (news(); as news) {
+    <section class="page-header">
+        <app-breadcrumb [links]="breadcrumbLinks()" />
+
+        <div class="page-header__info">
+            <h5>{{ news.title }}</h5>
+            <span class="news-page__date">
+                <img src="icons/calendar.svg" alt="">
+                {{ news.date | date: newsDateFormat }}
+            </span>
+        </div>
+    </section>
+
+    <article class="news-page__content">
+        <img class="news-page__image" [src]="news.image" [alt]="news.imageAlt">
+
+        <div class="news-page__text">
+            @for (newsContent of news.content; track $index) {
+                @if (newsContent.type === newsContentType.Paragraph) {
+                    <p class="news-page__paragraph">{{ newsContent.text }}</p>
+                } @else {
+                    <ul class="news-page__links">
+                        @for (newsLink of newsContent.links; track newsLink.url) {
+                            <li>
+                                <a class="news-page__link" [href]="newsLink.url" target="_blank" rel="noopener">
+                                    {{ newsLink.text }}
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                }
+            }
+
+            <a class="news-page__source" [href]="news.source.url" target="_blank" rel="noopener">Izvor</a>
+        </div>
+    </article>
+}
