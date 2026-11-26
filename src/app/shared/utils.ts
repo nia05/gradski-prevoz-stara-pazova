@@ -1,4 +1,20 @@
 import { TextAroundMatch } from './utils.model';
+import { SATURDAY_INDEX, SUNDAY_INDEX } from './utils.constants';
+import { TimetableDay } from '../core/bus-lines/bus-lines.model';
+
+export function getTimetableDay(date: Date): TimetableDay {
+  if (date.getDay() === SUNDAY_INDEX) {
+    return TimetableDay.Sunday;
+  }
+  if (date.getDay() === SATURDAY_INDEX) {
+    return TimetableDay.Saturday;
+  }
+  return TimetableDay.Weekday;
+}
+
+export function getTimeOfDay(date: Date): string {
+  return date.toTimeString().slice(0, 5);
+}
 
 export function toLowercaseWithoutDiacritics(text: string): string {
   return text
