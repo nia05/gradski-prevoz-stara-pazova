@@ -13,6 +13,7 @@
           "to": "Nova Pazova – Aerodrom glavni ulaz - okretnica",
           "skippedBusStopIds": [],
           "routeChangeNewsId": null,
+          "mapId": "16ZCxq1DVdhYmXJiUe8Gms4_FKBi4wfs",
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
@@ -29,13 +30,13 @@
             {
               "id": "stara-pazova-energoprojekt-d",
               "town": "Stara Pazova",
-              "name": "Energoprojekt - d",
+              "name": "Energoprojekt",
               "km": 2.64
             },
             {
               "id": "nova-pazova-bazeni-d",
               "town": "Nova Pazova",
-              "name": "Bazeni - d",
+              "name": "Bazeni",
               "km": 5.03
             },
             {
@@ -728,6 +729,7 @@
           "to": "Stara Pazova – Stara Pazova AS",
           "skippedBusStopIds": [],
           "routeChangeNewsId": null,
+          "mapId": "104nj86S2TYdsofhvHNLaZg5MZcemMII",
           "busStops": [
             {
               "id": "nova-pazova-aerodrom-glavni-ulaz-okretnica",
@@ -756,13 +758,13 @@
             {
               "id": "nova-pazova-bazeni-l",
               "town": "Nova Pazova",
-              "name": "Bazeni - l",
+              "name": "Bazeni",
               "km": 4.65
             },
             {
               "id": "stara-pazova-energoprojekt-l",
               "town": "Stara Pazova",
-              "name": "Energoprojekt - l",
+              "name": "Energoprojekt",
               "km": 7.04
             },
             {
@@ -1450,8 +1452,9 @@
           "code": "A",
           "from": "Stara Pazova – Stara Pazova AS",
           "to": "Krnješevci – Industrijska zona - okretnica",
-          "skippedBusStopIds": ["stara-pazova-restoran-putnik"],
-          "routeChangeNewsId": 4,
+          "skippedBusStopIds": [],
+          "routeChangeNewsId": null,
+          "mapId": null,
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
@@ -1480,7 +1483,7 @@
             {
               "id": "vojka-metal-centar-d",
               "town": "Vojka",
-              "name": "Metal centar - d",
+              "name": "Metal centar",
               "km": 3.5
             },
             {
@@ -2256,6 +2259,7 @@
           "to": "Stara Pazova – Stara Pazova AS",
           "skippedBusStopIds": [],
           "routeChangeNewsId": null,
+          "mapId": null,
           "busStops": [
             {
               "id": "krnjesevci-industrijska-zona-okretnica",
@@ -2314,7 +2318,7 @@
             {
               "id": "vojka-metal-centar-l",
               "town": "Vojka",
-              "name": "Metal centar - l",
+              "name": "Metal centar",
               "km": 9.5
             },
             {
@@ -3069,6 +3073,7 @@
           "to": "Golubinci – Putinačka 2.",
           "skippedBusStopIds": [],
           "routeChangeNewsId": null,
+          "mapId": null,
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
@@ -3079,13 +3084,13 @@
             {
               "id": "stara-pazova-cirila-i-metodija-1-l",
               "town": "Stara Pazova",
-              "name": "Ćirila i Metodija 1 - l",
+              "name": "Ćirila i Metodija 1",
               "km": 0.7
             },
             {
               "id": "stara-pazova-lifam-leva",
               "town": "Stara Pazova",
-              "name": "Lifam - leva",
+              "name": "Lifam",
               "km": 1.58
             },
             {
@@ -3536,6 +3541,7 @@
           "to": "Stara Pazova – Stara Pazova AS",
           "skippedBusStopIds": [],
           "routeChangeNewsId": null,
+          "mapId": null,
           "busStops": [
             {
               "id": "golubinci-putinacka-2",
@@ -3564,13 +3570,13 @@
             {
               "id": "stara-pazova-lifam-desna",
               "town": "Stara Pazova",
-              "name": "Lifam - desna",
+              "name": "Lifam",
               "km": 8.42
             },
             {
               "id": "stara-pazova-cirila-i-metodija-1-d",
               "town": "Stara Pazova",
-              "name": "Ćirila i Metodija 1 - d",
+              "name": "Ćirila i Metodija 1",
               "km": 9.3
             },
             {
@@ -4012,6 +4018,7 @@
           "to": "Surduk – Okretnica",
           "skippedBusStopIds": [],
           "routeChangeNewsId": null,
+          "mapId": null,
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
@@ -4022,7 +4029,7 @@
             {
               "id": "stara-pazova-stara-pazova-centar-d",
               "town": "Stara Pazova",
-              "name": "Stara Pazova centar - d",
+              "name": "Stara Pazova centar",
               "km": 0.6
             },
             {
@@ -4034,19 +4041,19 @@
             {
               "id": "stara-pazova-vuka-karadzica-ppo-d",
               "town": "Stara Pazova",
-              "name": "Vuka Karadžića/PPO - d",
+              "name": "Vuka Karadžića/PPO",
               "km": 1.8
             },
             {
               "id": "stara-pazova-kuca-fudbala-d",
               "town": "Stara Pazova",
-              "name": "Kuća fudbala - d",
+              "name": "Kuća fudbala",
               "km": 3.1
             },
             {
               "id": "stara-pazova-nestle-d",
               "town": "Stara Pazova",
-              "name": "Nestle - d",
+              "name": "Nestle",
               "km": 4.06
             },
             {
@@ -4088,13 +4095,13 @@
             {
               "id": "stari-banovci-petrinci-2-d",
               "town": "Stari Banovci",
-              "name": "Petrinci 2. - d",
+              "name": "Petrinci 2.",
               "km": 12.85
             },
             {
               "id": "belegis-petrinci-1-d",
               "town": "Belegiš",
-              "name": "Petrinci 1. - d",
+              "name": "Petrinci 1.",
               "km": 13.72
             },
             {
@@ -5008,6 +5015,7 @@
           "to": "Stara Pazova – Stara Pazova AS",
           "skippedBusStopIds": [],
           "routeChangeNewsId": null,
+          "mapId": null,
           "busStops": [
             {
               "id": "surduk-okretnica",
@@ -5066,13 +5074,13 @@
             {
               "id": "belegis-petrinci-1-l",
               "town": "Belegiš",
-              "name": "Petrinci 1. - l",
+              "name": "Petrinci 1.",
               "km": 9.89
             },
             {
               "id": "stari-banovci-petrinci-2-l",
               "town": "Stari Banovci",
-              "name": "Petrinci 2. - l",
+              "name": "Petrinci 2.",
               "km": 10.76
             },
             {
@@ -5114,19 +5122,19 @@
             {
               "id": "stara-pazova-nestle-l",
               "town": "Stara Pazova",
-              "name": "Nestle - l",
+              "name": "Nestle",
               "km": 19.55
             },
             {
               "id": "stara-pazova-kuca-fudbala-l",
               "town": "Stara Pazova",
-              "name": "Kuća fudbala - l",
+              "name": "Kuća fudbala",
               "km": 20.51
             },
             {
               "id": "stara-pazova-vuka-karadzica-ppo-l",
               "town": "Stara Pazova",
-              "name": "Vuka Karadžića/PPO - l",
+              "name": "Vuka Karadžića/PPO",
               "km": 21.81
             },
             {
@@ -5138,7 +5146,7 @@
             {
               "id": "stara-pazova-stara-pazova-centar-l",
               "town": "Stara Pazova",
-              "name": "Stara Pazova centar - l",
+              "name": "Stara Pazova centar",
               "km": 23.01
             },
             {
@@ -5928,6 +5936,7 @@
           "to": "Novi Banovci – Izlaz",
           "skippedBusStopIds": [],
           "routeChangeNewsId": null,
+          "mapId": null,
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
@@ -5944,7 +5953,7 @@
             {
               "id": "stara-pazova-energoprojekt-d",
               "town": "Stara Pazova",
-              "name": "Energoprojekt - d",
+              "name": "Energoprojekt",
               "km": 2.64
             },
             {
@@ -5956,19 +5965,19 @@
             {
               "id": "nova-pazova-banovacki-put-mtu-d",
               "town": "Nova Pazova",
-              "name": "Banovački put (MTU) - d",
+              "name": "Banovački put (MTU)",
               "km": 7.35
             },
             {
               "id": "stari-banovci-pere-codanovica-1-d",
               "town": "Stari Banovci",
-              "name": "Pere Čodanovića 1 - d",
+              "name": "Pere Čodanovića 1",
               "km": 10.85
             },
             {
               "id": "stari-banovci-pere-codanovica-2-d",
               "town": "Stari Banovci",
-              "name": "Pere Čodanovića 2 - d",
+              "name": "Pere Čodanovića 2",
               "km": 11.35
             },
             {
@@ -6635,6 +6644,7 @@
           "to": "Stara Pazova – Stara Pazova AS",
           "skippedBusStopIds": [],
           "routeChangeNewsId": null,
+          "mapId": null,
           "busStops": [
             {
               "id": "novi-banovci-izlaz",
@@ -6687,25 +6697,25 @@
             {
               "id": "stari-banovci-pere-codanovica-2-l",
               "town": "Stari Banovci",
-              "name": "Pere Čodanovića 2 - l",
+              "name": "Pere Čodanovića 2",
               "km": 4.15
             },
             {
               "id": "stari-banovci-pere-codanovica-1-l",
               "town": "Stari Banovci",
-              "name": "Pere Čodanovića 1 - l",
+              "name": "Pere Čodanovića 1",
               "km": 4.65
             },
             {
               "id": "nova-pazova-banovacki-put-deleze-l",
               "town": "Nova Pazova",
-              "name": "Banovački put (Deleze) - l",
+              "name": "Banovački put (Deleze)",
               "km": 8.15
             },
             {
               "id": "nova-pazova-bazeni-l",
               "town": "Nova Pazova",
-              "name": "Bazeni - l",
+              "name": "Bazeni",
               "km": 10.47
             },
             {
@@ -7412,6 +7422,7 @@
           "to": "Železnička stanica St. Pazova",
           "skippedBusStopIds": [],
           "routeChangeNewsId": null,
+          "mapId": null,
           "busStops": [
             {
               "id": "stara-pazova-stara-pazova-as",
@@ -7440,19 +7451,19 @@
             {
               "id": "stara-pazova-kralja-petra-prvog-d",
               "town": "Stara Pazova",
-              "name": "Kralja Petra Prvog - d",
+              "name": "Kralja Petra Prvog",
               "km": 2.7
             },
             {
               "id": "stara-pazova-kralja-petra-prvog-1-d",
               "town": "Stara Pazova",
-              "name": "Kralja Petra Prvog 1 - d",
+              "name": "Kralja Petra Prvog 1",
               "km": 3.4
             },
             {
               "id": "stara-pazova-stara-pazova-centar-d",
               "town": "Stara Pazova",
-              "name": "Stara Pazova centar - d",
+              "name": "Stara Pazova centar",
               "km": 4.2
             },
             {
@@ -7464,7 +7475,7 @@
             {
               "id": "stara-pazova-vuka-karadzica-ppo-d",
               "town": "Stara Pazova",
-              "name": "Vuka Karadžića/PPO - d",
+              "name": "Vuka Karadžića/PPO",
               "km": 5.9
             },
             {
@@ -7488,19 +7499,19 @@
             {
               "id": "stara-pazova-nestle-l-ka-staroj-pazovi",
               "town": "Stara Pazova",
-              "name": "Nestle - l (ka Staroj Pazovi)",
+              "name": "Nestle (ka Staroj Pazovi)",
               "km": 8.2
             },
             {
               "id": "stara-pazova-kuca-fudbala-l",
               "town": "Stara Pazova",
-              "name": "Kuća fudbala - l",
+              "name": "Kuća fudbala",
               "km": 9.1
             },
             {
               "id": "stara-pazova-vuka-karadzica-ppo-l",
               "town": "Stara Pazova",
-              "name": "Vuka Karadžića/PPO - l",
+              "name": "Vuka Karadžića/PPO",
               "km": 9.8
             },
             {
@@ -7512,7 +7523,7 @@
             {
               "id": "stara-pazova-stara-pazova-centar-l",
               "town": "Stara Pazova",
-              "name": "Stara Pazova centar - l",
+              "name": "Stara Pazova centar",
               "km": 11.2
             },
             {
@@ -7524,7 +7535,7 @@
             {
               "id": "stara-pazova-cirila-i-metodija-1-l",
               "town": "Stara Pazova",
-              "name": "Ćirila i Metodija 1 - l",
+              "name": "Ćirila i Metodija 1",
               "km": 12.5
             },
             {
@@ -8658,11 +8669,12 @@
           "to": "Bazeni - d",
           "skippedBusStopIds": [],
           "routeChangeNewsId": null,
+          "mapId": null,
           "busStops": [
             {
               "id": "nova-pazova-bazeni-d",
               "town": "Nova Pazova",
-              "name": "Bazeni - d",
+              "name": "Bazeni",
               "km": 0
             },
             {
@@ -8734,7 +8746,7 @@
             {
               "id": "nova-pazova-bazeni-d",
               "town": "Nova Pazova",
-              "name": "Bazeni - d",
+              "name": "Bazeni",
               "km": 8.5
             }
           ],
@@ -9716,6 +9728,7 @@
           "to": "Novi Banovci – Izlaz",
           "skippedBusStopIds": [],
           "routeChangeNewsId": null,
+          "mapId": null,
           "busStops": [
             {
               "id": "surduk-okretnica",
@@ -9774,13 +9787,13 @@
             {
               "id": "belegis-petrinci-1-l",
               "town": "Belegiš",
-              "name": "Petrinci 1. - l",
+              "name": "Petrinci 1.",
               "km": 12.18
             },
             {
               "id": "stari-banovci-petrinci-2-l",
               "town": "Stari Banovci",
-              "name": "Petrinci 2. - l",
+              "name": "Petrinci 2.",
               "km": 12.85
             },
             {
@@ -10516,6 +10529,7 @@
           "to": "Surduk – Okretnica",
           "skippedBusStopIds": [],
           "routeChangeNewsId": null,
+          "mapId": null,
           "busStops": [
             {
               "id": "novi-banovci-izlaz",
@@ -10592,13 +10606,13 @@
             {
               "id": "stari-banovci-petrinci-2-d",
               "town": "Stari Banovci",
-              "name": "Petrinci 2. - d",
+              "name": "Petrinci 2.",
               "km": 7.34
             },
             {
               "id": "belegis-petrinci-1-d",
               "town": "Belegiš",
-              "name": "Petrinci 1. - d",
+              "name": "Petrinci 1.",
               "km": 8.01
             },
             {
