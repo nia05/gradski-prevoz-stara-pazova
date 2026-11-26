@@ -4,8 +4,8 @@ import { NewsService } from '../core/news/news.service';
 import { NewsCardComponent } from '../shared/news-card/news-card.component';
 import { BreadcrumbComponent } from '../shared/breadcrumb/breadcrumb.component';
 import { BreadcrumbLink } from '../shared/breadcrumb/breadcrumb.model';
-import { HOME_BREADCRUMB_LINK } from '../shared/breadcrumb/breadcrumb.constants';
-import { NEWS_PATH } from '../app.routes.constants';
+import { HOME_BREADCRUMB_LINK, NEWS_BREADCRUMB_LINK } from '../shared/breadcrumb/breadcrumb.constants';
+import { PageName } from '../app.routes.model';
 import { NEWS_PAGE_SIZE } from './news-list-page.constants';
 
 @Component({
@@ -18,10 +18,8 @@ export class NewsListPageComponent {
   private readonly news = inject(NewsService).news;
   private readonly visibleNewsCount = signal(NEWS_PAGE_SIZE);
 
-  protected readonly breadcrumbLinks: BreadcrumbLink[] = [
-    HOME_BREADCRUMB_LINK,
-    { name: 'Vesti', link: ['/', NEWS_PATH] },
-  ];
+  protected readonly newsListPageName = PageName.NewsList;
+  protected readonly breadcrumbLinks: BreadcrumbLink[] = [HOME_BREADCRUMB_LINK, NEWS_BREADCRUMB_LINK];
 
   protected readonly visibleNews = computed(() => this.news().slice(0, this.visibleNewsCount()));
 

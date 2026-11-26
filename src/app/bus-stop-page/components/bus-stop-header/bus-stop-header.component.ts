@@ -4,7 +4,9 @@ import { BusStop, Line, TimetableDay } from '../../../core/bus-lines/bus-lines.m
 import { BreadcrumbComponent } from '../../../shared/breadcrumb/breadcrumb.component';
 import { BreadcrumbLink } from '../../../shared/breadcrumb/breadcrumb.model';
 import { HOME_BREADCRUMB_LINK } from '../../../shared/breadcrumb/breadcrumb.constants';
-import { BUS_LINE_PATH } from '../../../app.routes.constants';
+import { getBusLineLink, getBusStopLink } from '../../../app.routes.links';
+import { getBusLinePageName } from '../../../app.routes.page-names';
+import { IconPath } from '../../../shared/icon-path.model';
 import { DAY_TABS } from './bus-stop-header.constants';
 
 @Component({
@@ -21,18 +23,16 @@ export class BusStopHeaderComponent {
   readonly directionChange = output<void>();
   readonly dayChange = output<TimetableDay>();
 
+  protected readonly iconPath = IconPath;
   protected readonly dayTabs = DAY_TABS;
 
   protected readonly firstDirectionBusStops = computed(() => this.busLine().directions[0].busStops);
 
-  protected readonly breadcrumbLinks = computed<BreadcrumbLink[]>(() => {
-    const busLineLink = ['/', BUS_LINE_PATH, this.busLine().number];
-    return [
-      HOME_BREADCRUMB_LINK,
-      { name: `Linija ${this.busLine().number}`, link: busLineLink },
-      { name: this.busStop().name, link: [...busLineLink, this.busStop().id] },
-    ];
-  });
+  protected readonly breadcrumbLinks = computed<BreadcrumbLink[]>(() => [
+    HOME_BREADCRUMB_LINK,
+    { name: getBusLinePageName(this.busLine().number), link: getBusLineLink(this.busLine().number) },
+    { name: this.busStop().name, link: getBusStopLink(this.busLine().number, this.busStop().id) },
+  ]);
 
   private readonly otherDirection = computed(() => {
     const directions = this.busLine().directions;

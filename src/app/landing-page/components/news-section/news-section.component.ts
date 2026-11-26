@@ -3,7 +3,8 @@ import { RouterLink } from '@angular/router';
 
 import { NewsCardComponent } from '../../../shared/news-card/news-card.component';
 import { NewsService } from '../../../core/news/news.service';
-import { NEWS_PATH } from '../../../app.routes.constants';
+import { NEWS_LIST_LINK } from '../../../app.routes.constants';
+import { PageName } from '../../../app.routes.model';
 import { LATEST_NEWS_COUNT } from './news-section.constants';
 
 @Component({
@@ -15,6 +16,7 @@ import { LATEST_NEWS_COUNT } from './news-section.constants';
 export class NewsSectionComponent {
   private readonly news = inject(NewsService).news;
 
-  protected readonly newsPath = NEWS_PATH;
+  protected readonly newsListLink = NEWS_LIST_LINK;
+  protected readonly newsListPageName = PageName.NewsList;
   protected readonly latestNews = computed(() => this.news().slice(0, LATEST_NEWS_COUNT));
 }

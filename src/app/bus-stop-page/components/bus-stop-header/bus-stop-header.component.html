@@ -13,7 +13,7 @@
                     [attr.aria-label]="changeDirectionLabel()"
                     (click)="directionChange.emit()"
                 >
-                    <img src="icons/direction-change.svg" alt="">
+                    <img [src]="iconPath.DirectionChange" alt="">
                     <span class="tooltip" aria-hidden="true">{{ changeDirectionLabel() }}</span>
                 </button>
             }
@@ -31,7 +31,7 @@
                     <img
                         class="page-header__arrow"
                         [class.page-header__arrow--left]="isReturnDirection()"
-                        src="icons/direction-arrow.svg"
+                        [src]="iconPath.DirectionArrow"
                         alt=""
                     >
                     {{ busStops[busStops.length - 1].name }}

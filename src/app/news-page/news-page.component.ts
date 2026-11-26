@@ -6,8 +6,9 @@ import { NewsContentType } from '../core/news/news.model';
 import { NEWS_DATE_FORMAT } from '../core/news/news.constants';
 import { BreadcrumbComponent } from '../shared/breadcrumb/breadcrumb.component';
 import { BreadcrumbLink } from '../shared/breadcrumb/breadcrumb.model';
-import { HOME_BREADCRUMB_LINK } from '../shared/breadcrumb/breadcrumb.constants';
-import { NEWS_PATH } from '../app.routes.constants';
+import { HOME_BREADCRUMB_LINK, NEWS_BREADCRUMB_LINK } from '../shared/breadcrumb/breadcrumb.constants';
+import { IconPath } from '../shared/icon-path.model';
+import { getNewsLink } from '../app.routes.links';
 
 @Component({
   selector: 'app-news-page',
@@ -20,6 +21,7 @@ export class NewsPageComponent {
 
   readonly newsId = input.required<string>();
 
+  protected readonly iconPath = IconPath;
   protected readonly newsContentType = NewsContentType;
   protected readonly newsDateFormat = NEWS_DATE_FORMAT;
 
@@ -34,8 +36,8 @@ export class NewsPageComponent {
     }
     return [
       HOME_BREADCRUMB_LINK,
-      { name: 'Vesti', link: ['/', NEWS_PATH] },
-      { name: news.title, link: ['/', NEWS_PATH, news.id] },
+      NEWS_BREADCRUMB_LINK,
+      { name: news.title, link: getNewsLink(news.id) },
     ];
   });
 }

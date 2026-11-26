@@ -2,6 +2,7 @@ import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { BreadcrumbLink } from './breadcrumb.model';
+import { IconPath } from '../icon-path.model';
 
 @Component({
   selector: 'app-breadcrumb',
@@ -11,4 +12,6 @@ import { BreadcrumbLink } from './breadcrumb.model';
 })
 export class BreadcrumbComponent {
   readonly links = input.required<BreadcrumbLink[]>();
+
+  protected readonly iconPath = IconPath;
 }

@@ -4,7 +4,9 @@ import { Line } from '../../../core/bus-lines/bus-lines.model';
 import { BreadcrumbComponent } from '../../../shared/breadcrumb/breadcrumb.component';
 import { BreadcrumbLink } from '../../../shared/breadcrumb/breadcrumb.model';
 import { HOME_BREADCRUMB_LINK } from '../../../shared/breadcrumb/breadcrumb.constants';
-import { BUS_LINE_PATH } from '../../../app.routes.constants';
+import { getBusLineLink } from '../../../app.routes.links';
+import { getBusLinePageName } from '../../../app.routes.page-names';
+import { IconPath } from '../../../shared/icon-path.model';
 import { BusStopWarningComponent } from '../bus-stop-warning/bus-stop-warning.component';
 
 @Component({
@@ -20,9 +22,13 @@ export class LineHeaderComponent {
   readonly routeChangeNewsId = input.required<number | null>();
   readonly directionChange = output<void>();
 
+  protected readonly iconPath = IconPath;
+
+  protected readonly busLinePageName = computed(() => getBusLinePageName(this.busLine().number));
+
   protected readonly breadcrumbLinks = computed<BreadcrumbLink[]>(() => [
     HOME_BREADCRUMB_LINK,
-    { name: `Linija ${this.busLine().number}`, link: ['/', BUS_LINE_PATH, this.busLine().number] },
+    { name: this.busLinePageName(), link: getBusLineLink(this.busLine().number) },
   ]);
 
   protected readonly firstDirectionBusStops = computed(() => this.busLine().directions[0].busStops);

@@ -1,7 +1,8 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { BUS_LINE_PATH } from '../../../app.routes.constants';
+import { getBusStopLink } from '../../../app.routes.links';
+import { IconPath } from '../../../shared/icon-path.model';
 
 @Component({
   selector: 'app-bus-stop-item',
@@ -16,5 +17,6 @@ export class BusStopItemComponent {
   readonly busStopTown = input.required<string>();
   readonly isSkipped = input.required<boolean>();
 
-  protected readonly busLinePath = BUS_LINE_PATH;
+  protected readonly iconPath = IconPath;
+  protected readonly busStopLink = computed(() => getBusStopLink(this.busLineNumber(), this.busStopId()));
 }

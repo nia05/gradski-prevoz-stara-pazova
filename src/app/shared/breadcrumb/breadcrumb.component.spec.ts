@@ -3,13 +3,15 @@ import { provideRouter } from '@angular/router';
 
 import { BreadcrumbComponent } from './breadcrumb.component';
 import { HOME_BREADCRUMB_LINK } from './breadcrumb.constants';
-import { BUS_LINE_PATH, HOME_PATH } from '../../app.routes.constants';
+import { HOME_PATH } from '../../app.routes.constants';
+import { getBusLineLink } from '../../app.routes.links';
+import { getBusLinePageName } from '../../app.routes.page-names';
 
 describe('BreadcrumbComponent', () => {
   let component: BreadcrumbComponent;
   let fixture: ComponentFixture<BreadcrumbComponent>;
 
-  const busLineLink = { name: 'Linija 1', link: ['/', BUS_LINE_PATH, 1] };
+  const busLineLink = { name: getBusLinePageName(1), link: getBusLineLink(1) };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

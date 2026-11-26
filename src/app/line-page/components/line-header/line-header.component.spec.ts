@@ -3,6 +3,7 @@ import { provideRouter } from '@angular/router';
 
 import { LineHeaderComponent } from './line-header.component';
 import { createSuburbanBusLine } from '../../../core/bus-lines/bus-lines.generator';
+import { getBusLinePageName } from '../../../app.routes.page-names';
 
 describe('LineHeaderComponent', () => {
   let component: LineHeaderComponent;
@@ -36,7 +37,7 @@ describe('LineHeaderComponent', () => {
 
   it('shows the bus line number and the towns of the bus line', () => {
     const header: HTMLElement = fixture.nativeElement;
-    expect(header.querySelector('h5')?.textContent).toBe(`Linija ${busLine.number}`);
+    expect(header.querySelector('h5')?.textContent).toBe(getBusLinePageName(busLine.number));
     expect(header.querySelector('.page-header__value')?.textContent).toBe('Stara Pazova, Nova Pazova');
   });
 

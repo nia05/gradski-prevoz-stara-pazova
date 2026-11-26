@@ -42,6 +42,6 @@ describe('NewsSectionComponent', () => {
 
   it('links to the page with all news', () => {
     const allNewsLink: HTMLAnchorElement = fixture.nativeElement.querySelector('.news-section__heading a');
-    expect(allNewsLink.getAttribute('href')).toBe('/' + NEWS_PATH);
+    expect(allNewsLink.getAttribute('href')).toBe(`/${NEWS_PATH}`);
   });
 });

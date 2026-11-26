@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { HOME_PATH } from '../../app.routes.constants';
+import { HOME_LINK } from '../../app.routes.constants';
 
 @Component({
   selector: 'app-toolbar',
@@ -10,5 +10,5 @@ import { HOME_PATH } from '../../app.routes.constants';
   styleUrl: './toolbar.component.scss'
 })
 export class ToolbarComponent {
-  protected readonly homePath = HOME_PATH;
+  protected readonly homeLink = HOME_LINK;
 }

@@ -5,7 +5,8 @@ import { BusStop } from '../../../core/bus-lines/bus-lines.model';
 import { BusLinesService } from '../../../core/bus-lines/bus-lines.service';
 import { splitAroundMatch } from '../../../shared/utils';
 import { TextAroundMatch } from '../../../shared/utils.model';
-import { BUS_LINE_PATH } from '../../../app.routes.constants';
+import { getBusStopLink } from '../../../app.routes.links';
+import { IconPath } from '../../../shared/icon-path.model';
 
 @Component({
   selector: 'app-search-bus-stop-section',
@@ -18,6 +19,7 @@ export class SearchBusStopSectionComponent {
   private readonly router = inject(Router);
   private readonly searchInput = viewChild.required<ElementRef<HTMLInputElement>>('searchInput');
 
+  protected readonly iconPath = IconPath;
   protected readonly searchTerm = signal('');
   protected readonly selectedBusStop = signal<BusStop | null>(null);
 
@@ -52,6 +54,6 @@ export class SearchBusStopSectionComponent {
     if (!busLine) {
       return;
     }
-    this.router.navigate(['/', BUS_LINE_PATH, busLine.number, busStop.id]);
+    this.router.navigate(getBusStopLink(busLine.number, busStop.id));
   }
 }

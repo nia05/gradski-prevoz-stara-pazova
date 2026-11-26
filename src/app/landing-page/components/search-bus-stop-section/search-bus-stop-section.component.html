@@ -9,7 +9,7 @@
                     (input)="updateSearchTerm(searchInput.value)">
                 @if (searchTerm()) {
                     <button class="search__clear" type="button" aria-label="Obriši unos" (click)="clearSearch()">
-                        <img src="icons/delete.svg" alt="">
+                        <img [src]="iconPath.Delete" alt="">
                     </button>
                 }
             </div>

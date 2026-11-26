@@ -6,7 +6,7 @@ import { provideRouter, Router } from '@angular/router';
 import { SearchBusStopSectionComponent } from './search-bus-stop-section.component';
 import { createBusLinesResponse, createSuburbanBusLine } from '../../../core/bus-lines/bus-lines.generator';
 import { BUS_LINES_URL } from '../../../core/bus-lines/bus-lines.constants';
-import { BUS_LINE_PATH } from '../../../app.routes.constants';
+import { getBusStopLink } from '../../../app.routes.links';
 
 describe('SearchBusStopSectionComponent', () => {
   let component: SearchBusStopSectionComponent;
@@ -133,7 +133,7 @@ describe('SearchBusStopSectionComponent', () => {
     fixture.detectChanges();
     fixture.nativeElement.querySelector('.btn--primary').click();
 
-    expect(router.navigate).toHaveBeenCalledWith(['/', BUS_LINE_PATH, busLine.number, busStop.id]);
+    expect(router.navigate).toHaveBeenCalledWith(getBusStopLink(busLine.number, busStop.id));
   });
 
   it('opens the dropdown again when the text is changed after choosing', () => {

@@ -3,7 +3,7 @@
         @for (breadcrumbLink of links(); track breadcrumbLink.name) {
             <li class="breadcrumb__item">
                 @if (!$first) {
-                    <img src="icons/breadcrumb-arrow.svg" alt="">
+                    <img [src]="iconPath.BreadcrumbArrow" alt="">
                 }
                 @if ($last) {
                     <span class="breadcrumb__current" aria-current="page">{{ breadcrumbLink.name }}</span>

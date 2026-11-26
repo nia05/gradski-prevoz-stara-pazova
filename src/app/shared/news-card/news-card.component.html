@@ -1,8 +1,8 @@
-<a class="news-card" [routerLink]="['/', newsPath, newsId()]">
+<a class="news-card" [routerLink]="newsLink()">
     <img class="news-card__image" [src]="newsImage()" [alt]="newsTitle()">
     <div class="news-card__content">
         <span class="news-card__date text-body-2">
-            <img src="icons/calendar.svg" alt="">
+            <img [src]="iconPath.Calendar" alt="">
             {{ newsDate() | date: newsDateFormat }}
         </span>
         <p class="news-card__title subtitle-1">{{ newsTitle() }}</p>

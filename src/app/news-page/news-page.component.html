@@ -2,10 +2,10 @@
     <section class="page-header">
         <app-breadcrumb [links]="breadcrumbLinks()" />
 
-        <div class="page-header__info">
+        <div class="page-header__info news-page__info">
             <h5>{{ news.title }}</h5>
             <span class="news-page__date">
-                <img src="icons/calendar.svg" alt="">
+                <img [src]="iconPath.Calendar" alt="">
                 {{ news.date | date: newsDateFormat }}
             </span>
         </div>

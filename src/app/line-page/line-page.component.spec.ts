@@ -7,6 +7,7 @@ import { LinePageComponent } from './line-page.component';
 import { createBusLinesResponse, createDirection, createSuburbanBusLine, createUrbanBusLine } from '../core/bus-lines/bus-lines.generator';
 import { DirectionCode } from '../core/bus-lines/bus-lines.model';
 import { BUS_LINES_URL } from '../core/bus-lines/bus-lines.constants';
+import { getBusLinePageName } from '../app.routes.page-names';
 
 describe('LinePageComponent', () => {
   let component: LinePageComponent;
@@ -55,7 +56,7 @@ describe('LinePageComponent', () => {
   it('shows the bus line number, towns and bus stops of the first direction', () => {
     openBusLine(suburbanBusLine.number);
     const page: HTMLElement = fixture.nativeElement;
-    expect(page.querySelector('h5')?.textContent).toBe(`Linija ${suburbanBusLine.number}`);
+    expect(page.querySelector('h5')?.textContent).toBe(getBusLinePageName(suburbanBusLine.number));
     expect(page.querySelector('.page-header__value')?.textContent).toBe('Stara Pazova, Nova Pazova');
     expect(getBusStopNames()).toEqual(['Stara Pazova AS', 'Centar']);
   });

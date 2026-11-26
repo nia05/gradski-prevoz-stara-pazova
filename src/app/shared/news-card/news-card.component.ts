@@ -1,9 +1,10 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 import { NEWS_DATE_FORMAT } from '../../core/news/news.constants';
-import { NEWS_PATH } from '../../app.routes.constants';
+import { getNewsLink } from '../../app.routes.links';
+import { IconPath } from '../icon-path.model';
 
 @Component({
   selector: 'app-news-card',
@@ -17,6 +18,7 @@ export class NewsCardComponent {
   readonly newsTitle = input.required<string>();
   readonly newsDate = input.required<string>();
 
-  protected readonly newsPath = NEWS_PATH;
+  protected readonly iconPath = IconPath;
   protected readonly newsDateFormat = NEWS_DATE_FORMAT;
+  protected readonly newsLink = computed(() => getNewsLink(this.newsId()));
 }
