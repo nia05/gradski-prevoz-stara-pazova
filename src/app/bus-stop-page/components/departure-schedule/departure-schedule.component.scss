@@ -1,0 +1,95 @@
+@use '../../../../styles/breakpoints';
+
+.departure-schedule {
+    padding: 1rem var(--page-padding-inline) 3rem;
+    @media (min-width: breakpoints.$desktop) {
+        padding-top: 1.5rem;
+    }
+
+    &__empty {
+        font-family: var(--text-body-1-family);
+        font-size: var(--text-body-1-size);
+        letter-spacing: var(--text-body-1-tracking);
+        color: var(--color-grey);
+    }
+
+    &__columns {
+        display: flex;
+        flex-direction: column;
+        @media (min-width: breakpoints.$desktop) {
+            flex-direction: row;
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        padding: 0.25rem 0;
+        border-bottom: 0.0625rem solid var(--color-grey-4);
+    }
+
+    &__heading {
+        margin-bottom: 0.75rem;
+        font-family: var(--text-subtitle-1-family);
+        font-weight: var(--font-weight-semibold);
+        font-size: var(--text-subtitle-1-size);
+        letter-spacing: var(--text-subtitle-1-tracking);
+        color: var(--color-grey);
+
+        &--repeated {
+            display: none;
+            @media (min-width: breakpoints.$desktop) {
+                display: flex;
+            }
+        }
+    }
+
+    &__hour-column {
+        flex: 0 0 2.25rem;
+    }
+
+    &__hour {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2.25rem;
+        border-radius: 0.25rem;
+        background-color: var(--color-grey-8);
+        font-family: var(--text-subtitle-1-family);
+        font-weight: var(--font-weight-semibold);
+        font-size: var(--text-subtitle-1-size);
+        letter-spacing: var(--text-subtitle-1-tracking);
+        color: var(--color-dark-blue);
+    }
+
+    &__times {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 1.5rem;
+    }
+
+    &__time {
+        font-family: var(--text-h6-family);
+        font-size: var(--text-h6-size);
+        letter-spacing: var(--text-h6-tracking);
+        color: var(--color-grey);
+
+        &--past {
+            color: var(--color-grey-50);
+        }
+
+        &--next {
+            margin: -0.25rem;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+            background-color: var(--color-yellow);
+        }
+    }
+}

@@ -1,0 +1,36 @@
+<section class="departure-schedule">
+    @if (departureTimes().length === 0) {
+        <p class="departure-schedule__empty">Ovog dana nema polazaka sa ovog stajališta.</p>
+    } @else {
+        <div class="departure-schedule__columns">
+            @for (hourRowColumn of hourRowColumns(); track $index) {
+                <div class="departure-schedule__column">
+                    <div
+                        class="departure-schedule__row departure-schedule__heading"
+                        [class.departure-schedule__heading--repeated]="!$first"
+                    >
+                        <span class="departure-schedule__hour-column">Sat</span>
+                        <span>Polasci</span>
+                    </div>
+
+                    @for (hourRow of hourRowColumn; track hourRow.hour) {
+                        <div class="departure-schedule__row">
+                            <span class="departure-schedule__hour-column departure-schedule__hour">{{ hourRow.hour }}</span>
+                            <div class="departure-schedule__times">
+                                @for (time of hourRow.times; track $index) {
+                                    <span
+                                        class="departure-schedule__time"
+                                        [class.departure-schedule__time--past]="isPast(time)"
+                                        [class.departure-schedule__time--next]="time === nextDepartureTime()"
+                                    >
+                                        {{ time }}
+                                    </span>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    }
+</section>
